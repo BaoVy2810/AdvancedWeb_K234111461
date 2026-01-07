@@ -1,0 +1,44 @@
+<p [ngStyle]="personal_style">Personal Information</p>
+<table>
+    <tr>
+        <td>Full Name:</td>
+        <td>
+            <input type="text" [value]="full_name"/>
+        </td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td>
+            <input type="email" value="{{email}}"/>
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>First Name:</td>
+        <td>
+            <input type="text" #firstname/>
+        </td>
+    </tr>
+    <tr>
+        <td>Middle Name:</td>
+        <td>
+            <input type="text" #middlename/>
+        </td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td>
+            <input type="text" #lastname/>
+        </td>
+    </tr>
+    <tr>
+        <td>Full Name:</td>
+        <td #td_fullname></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="get_fullname(firstname.value,middlename.value,lastname.value,td_fullname)">Get Full Name</button>
+        </td>
+    </tr>
+</table>

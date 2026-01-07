@@ -1,0 +1,40 @@
+<p>coursegpa works!</p>
+<h3>Course GPA Calculator</h3>
+
+<table>
+  <tr>
+    <td>Ongoing Point (30%):</td>
+    <td><input type="number" min="0" max="10" step="0.1" [(ngModel)]="ongoingPoint" (ngModelChange)="validatePoint($event, 'ongoing')" /></td>
+  </tr>
+  <tr>
+    <td>Midterm Point (20%):</td>
+    <td><input type="number" min="0" max="10" step="0.1" [(ngModel)]="midtermPoint" (ngModelChange)="validatePoint($event, 'midterm')" /></td>
+  </tr>
+  <tr>
+    <td>Finalterm Point (50%):</td>
+    <td><input type="number" min="0" max="10" step="0.1" [(ngModel)]="finaltermPoint" (ngModelChange)="validatePoint($event, 'final')" /></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align:center;">
+      <button (click)="calculateGPA()">Calculate GPA</button>
+    </td>
+  </tr>
+</table>
+
+<hr />
+
+<h4>Result:</h4>
+<table border="1" cellspacing="0" cellpadding="6">
+  <tr>
+    <td><b>Final Score (Hệ 10)</b></td>
+    <td>{{ finalScore | number: '1.2-2' }}</td>
+  </tr>
+  <tr>
+    <td><b>GPA (Hệ 4)</b></td>
+    <td>{{ gpa }}</td>
+  </tr>
+  <tr>
+    <td><b>Letter Grade</b></td>
+    <td>{{ gradeLetter }}</td>
+  </tr>
+</table>
