@@ -19,6 +19,7 @@ import { Listproduct1 } from './listproduct1/listproduct1';
 import { Listproduct2 } from './listproduct2/listproduct2';
 import { Customer } from './customer/customer';
 import { Listproduct3 } from './listproduct3/listproduct3';
+import { Exercise18Component } from './exercise18/exercise18';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { Listproduct3 } from './listproduct3/listproduct3';
     Listproduct1,
     Listproduct2,
     Customer,
-    Listproduct3
+    Listproduct3,
+    Exercise18Component
   ],
   imports: [
     BrowserModule,
