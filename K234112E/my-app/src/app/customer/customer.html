@@ -1,0 +1,21 @@
+<p>customer works!</p>
+<div *ngFor="let p of customers">
+    <p> ID: {{p.customerid}}</p>
+    <p> Name: {{p.customername}}</p>
+</div>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+        </tr>
+    </tbody>
+</table>

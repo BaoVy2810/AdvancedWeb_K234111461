@@ -1,0 +1,19 @@
+<p>listproduct2 works!</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>QUANTITY</th>
+            <th>PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.quantity}}</td>
+            <td>{{p.price}}</td>
+        </tr>
+    </tbody>
+</table>
