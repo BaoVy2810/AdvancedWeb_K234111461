@@ -1,13 +1,60 @@
 <p>exercise10 works!</p>
-<table border="1">
-    <tr>
-        <td>
-            <strong>Chuyển đổi Dương lịch thành Âm lịch</strong>
-        </td>
-    </tr>
-    <tr>
-        <div>
-            
+<div class="converter-container">
+    <div class="converter-card">
+        <h2 class="title">Chuyển đổi Dương lịch thành Âm lịch</h2>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label>Ngày</label>
+                <select class="form-select" id="days" name="days" [(ngModel)]="selectedDay">
+                    <option *ngFor="let day of days" [value]="day">{{day}}</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Tháng</label>
+                <select class="form-select" id="months" name="months" [(ngModel)]="selectedMonth">
+                    <option *ngFor="let month of months" [value]="month">{{month}}</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Năm</label>
+                <select class="form-select" id="years" name="years" [(ngModel)]="selectedYear">
+                    <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <button class="btn-convert" (click)="convertToLunar()">Chuyển đổi</button>
+            </div>
         </div>
-    </tr>
-</table>
+
+        <div class="result-section" *ngIf="lunarResult">
+            <h3 class="result-title">Âm Lịch</h3>
+            
+            <table class="result-table">
+                <tr>
+                    <td class="label">Thứ trong tuần</td>
+                    <td class="value">{{lunarResult.dayOfWeek}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Ngày tháng năm âm</td>
+                    <td class="value">{{lunarResult.lunarDay}}/{{lunarResult.lunarMonth}}/{{lunarResult.lunarYear}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Năm</td>
+                    <td class="value">{{lunarResult.yearName}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Tháng</td>
+                    <td class="value">{{lunarResult.monthName}}</td>
+                </tr>
+                <tr>
+                    <td class="label">Ngày</td>
+                    <td class="value">{{lunarResult.dayName}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
