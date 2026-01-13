@@ -23,6 +23,8 @@ import { Exercise18Component } from './exercise18/exercise18';
 import { Pagenotfound } from './pagenotfound/pagenotfound';
 import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
+import { Listcustomerservicer } from './myservices/listcustomerservicer/listcustomerservicer';
+import { ListCustomerHttpService } from './myservices/list-customer-http-service/list-customer-http-service';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { Customerdetail } from './customerdetail/customerdetail';
     Exercise18Component,
     Pagenotfound,
     Listcustomer,
-    Customerdetail
+    Customerdetail,
+    Listcustomerservicer,
+    ListCustomerHttpService
   ],
   imports: [
     BrowserModule,

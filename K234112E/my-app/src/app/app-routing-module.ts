@@ -7,6 +7,8 @@ import { Listproduct3 } from './listproduct3/listproduct3';
 import { Pagenotfound } from './pagenotfound/pagenotfound';
 import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
+import { Listcustomerservicer } from './myservices/listcustomerservicer/listcustomerservicer';
+import { ListCustomerHttpService } from './myservices/list-customer-http-service/list-customer-http-service';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -15,6 +17,10 @@ const routes: Routes = [
   {path:"sanpham3",component:Listproduct3},
   {path:"list-customer",component:Listcustomer},
   {path:"list-customer/:id",component:Customerdetail},
+  {path:"list-customer-service",component:Listcustomerservicer},
+  {path:"list-customer-service/:id",component:Customerdetail},
+  {path:"list-customer-http-service",component:ListCustomerHttpService},
+  {path:"list-customer-http-service/:id",component:Customerdetail},
 
 
   {path:"**",component:Pagenotfound}
