@@ -22,6 +22,6 @@ export class ListCustomerHttpService {
   }
   view_detail(id:any)
   {
-    this.router.navigate(["list-customer-http",id])
+    this.router.navigate(["list-customer-http-service",id])
   }
 }

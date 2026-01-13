@@ -3,25 +3,30 @@
         "id":"c1",
         "name":"customer 1",
         "gender":"male",
-        "image":"c1.jpg"},
+        "image":"c1.jpg"
+    },
     {
         "id":"c2",
         "name":"customer 2",
         "gender":"male",
-        "image":"c2.jpg"},
+        "image":"c2.jpg"
+    },
     {
         "id":"c3",
         "name":"customer 3",
         "gender":"female",
-        "image":"c3.jpg"},
+        "image":"c3.jpg"
+    },
     {
         "id":"c4",
         "name":"customer 4",
         "gender":"male",
-        "image":"c4.jpg"},
+        "image":"c4.jpg"
+    },
     {
         "id":"c5",
         "name":"customer 5",
         "gender":"female",
-        "image":"c5.jpg"}
+        "image":"c5.jpg"
+    }
 ]
