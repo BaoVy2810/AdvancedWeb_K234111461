@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root',
 })
 export class ProductHttpService {
-  product_url="./assets/dataset/product.json";
+  product_url="assets/dataset/product.json";
 
   constructor(private _http:HttpClient) 
   {

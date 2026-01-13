@@ -20,6 +20,9 @@ import { Listproduct2 } from './listproduct2/listproduct2';
 import { Customer } from './customer/customer';
 import { Listproduct3 } from './listproduct3/listproduct3';
 import { Exercise18Component } from './exercise18/exercise18';
+import { Pagenotfound } from './pagenotfound/pagenotfound';
+import { Listcustomer } from './listcustomer/listcustomer';
+import { Customerdetail } from './customerdetail/customerdetail';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { Exercise18Component } from './exercise18/exercise18';
     Listproduct2,
     Customer,
     Listproduct3,
-    Exercise18Component
+    Exercise18Component,
+    Pagenotfound,
+    Listcustomer,
+    Customerdetail
   ],
   imports: [
     BrowserModule,
