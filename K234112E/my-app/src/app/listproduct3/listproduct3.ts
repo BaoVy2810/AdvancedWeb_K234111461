@@ -9,10 +9,10 @@ import { ProductHttpService } from '../product-http-service';
 })
 export class Listproduct3 {
   products:any;
-  // constructor(private pshttp:ProductHttpService) 
-  // {
-  //   this.pshttp.get_all_products().subscribe({
-  //     next:(data)=>this.products=data
-  //   })
-  // }
+  constructor(private pshttp:ProductHttpService) 
+  {
+    this.pshttp.get_all_products().subscribe({
+      next:(data)=>this.products=data
+    })
+  }
 }
