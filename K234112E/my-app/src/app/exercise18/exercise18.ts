@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './exercise18.html',
   styleUrls: ['./exercise18.css']
 })
-export class Exercise18Component implements OnInit {
+export class Exercise18 implements OnInit {
 
   customersData: any[] = [];
 
@@ -23,5 +23,4 @@ export class Exercise18Component implements OnInit {
       }
     });
   }
-
 }
