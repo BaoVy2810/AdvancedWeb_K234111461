@@ -9,6 +9,8 @@ import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
 import { Listcustomerservicer } from './myservices/listcustomerservicer/listcustomerservicer';
 import { ListCustomerHttpService } from './myservices/list-customer-http-service/list-customer-http-service';
+import { ServiceProductImageEventDetail } from './exercise13/service-product-image-event-detail/service-product-image-event-detail';
+import { ServiceProductImageEvent } from './exercise13/service-product-image-event/service-product-image-event';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -21,8 +23,10 @@ const routes: Routes = [
   {path:"list-customer-service/:id",component:Customerdetail},
   {path:"list-customer-http-service",component:ListCustomerHttpService},
   {path:"list-customer-http-service/:id",component:Customerdetail},
+  {path:'service-product-image-event',component:ServiceProductImageEvent},
+  {path:'service-product-image-event/:id',component:ServiceProductImageEventDetail},
 
-
+  
   {path:"**",component:Pagenotfound}
 ];
 
