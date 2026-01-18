@@ -25,7 +25,7 @@ import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
 import { Listcustomerservicer } from './myservices/listcustomerservicer/listcustomerservicer';
 import { ListCustomerHttpService } from './myservices/list-customer-http-service/list-customer-http-service';
-import { ProductService } from './exercise13/exercise13';
+import { Exercise13 } from './exercise13/exercise13';
 import { Exercise14 } from './exercise14/exercise14';
 import { Exercise19 } from './exercise19/exercise19';
 import { ServiceProductImageEvent } from './exercise13/service-product-image-event/service-product-image-event';
@@ -52,7 +52,7 @@ import { ServiceProductImageEventDetail } from './exercise13/service-product-ima
     Customerdetail,
     Listcustomerservicer,
     ListCustomerHttpService,
-    ProductService,
+    Exercise13,
     Exercise14,
     Exercise19,
     ServiceProductImageEvent,
