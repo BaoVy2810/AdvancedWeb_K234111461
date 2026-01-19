@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing-module';
+import { AppRoutingModule, RoutingComponent } from './app-routing-module';
 import { App } from './app';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
@@ -30,10 +30,14 @@ import { Exercise14 } from './exercise14/exercise14';
 import { Exercise19 } from './exercise19/exercise19';
 import { ServiceProductImageEvent } from './exercise13/service-product-image-event/service-product-image-event';
 import { ServiceProductImageEventDetail } from './exercise13/service-product-image-event-detail/service-product-image-event-detail';
+import { ProductComponent } from './exercise19/product-component/product-component';
+import { ListProductComponent } from './exercise19/list-product-component/list-product-component';
+import { ServiceProductComponent } from './exercise19/service-product-component/service-product-component';
 
 @NgModule({
   declarations: [
     App,
+    RoutingComponent,
     About,
     Contact,
     Exercise3,
@@ -56,7 +60,10 @@ import { ServiceProductImageEventDetail } from './exercise13/service-product-ima
     Exercise14,
     Exercise19,
     ServiceProductImageEvent,
-    ServiceProductImageEventDetail
+    ServiceProductImageEventDetail,
+    ProductComponent,
+    ListProductComponent,
+    ServiceProductComponent
   ],
   imports: [
     BrowserModule,

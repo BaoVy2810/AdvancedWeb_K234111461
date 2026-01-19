@@ -11,6 +11,9 @@ import { Listcustomerservicer } from './myservices/listcustomerservicer/listcust
 import { ListCustomerHttpService } from './myservices/list-customer-http-service/list-customer-http-service';
 import { ServiceProductImageEventDetail } from './exercise13/service-product-image-event-detail/service-product-image-event-detail';
 import { ServiceProductImageEvent } from './exercise13/service-product-image-event/service-product-image-event';
+import { ServiceProductComponent } from './exercise19/service-product-component/service-product-component';
+import { ProductComponent } from './exercise19/product-component/product-component';
+import { ListProductComponent } from './exercise19/list-product-component/list-product-component';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -25,8 +28,12 @@ const routes: Routes = [
   {path:"list-customer-http-service/:id",component:Customerdetail},
   {path:'service-product-image-event',component:ServiceProductImageEvent},
   {path:'service-product-image-event/:id',component:ServiceProductImageEventDetail},
-
+  {path:'product',component:ProductComponent},
+  {path:'list-product',component:ListProductComponent},
+  {path:'service-product',component:ServiceProductComponent},
   
+
+
   {path:"**",component:Pagenotfound}
 ];
 
@@ -35,3 +42,9 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export const RoutingComponent=[
+  ProductComponent,
+  ListProductComponent,
+  ServiceProductComponent,
+]
