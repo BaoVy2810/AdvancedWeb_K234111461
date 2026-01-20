@@ -1,0 +1,76 @@
+/* Căn giữa toàn bộ nội dung */
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* canh giữa theo chiều dọc */
+  align-items: center;     /* canh giữa theo chiều ngang */
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+/* Khung form */
+form {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  margin-bottom: 40px;
+}
+
+/* Tiêu đề */
+h3.text-center {
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 20px;
+}
+
+/* Nhãn label */
+label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input & select */
+input.form-control,
+select.form-select {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+  border-color: #0d6efd;
+}
+
+/* Hiển thị lỗi */
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+/* Nút submit */
+button.btn-primary {
+  width: 100%;
+  font-weight: 500;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+/* Checkbox & radio chỉnh gọn */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+  accent-color: #0d6efd;
+}
+
+/* JSON preview (ở dưới form) */
+p {
+  font-size: 0.9rem;
+  color: #555;
+  word-break: break-all;
+  text-align: center;
+  width: 100%;
+}

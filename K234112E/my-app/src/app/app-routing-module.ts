@@ -14,6 +14,8 @@ import { ServiceProductImageEvent } from './exercise13/service-product-image-eve
 import { ServiceProductComponent } from './exercise19/service-product-component/service-product-component';
 import { ProductComponent } from './exercise19/product-component/product-component';
 import { ListProductComponent } from './exercise19/list-product-component/list-product-component';
+import { Form } from './form/form';
+import { FakeProductComponent } from './fake-product-component/fake-product-component';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path:'product',component:ProductComponent},
   {path:'list-product',component:ListProductComponent},
   {path:'service-product',component:ServiceProductComponent},
-  
+  {path:"registerform",component:Form},
+  {path:"ex26",component:FakeProductComponent},
 
 
   {path:"**",component:Pagenotfound}

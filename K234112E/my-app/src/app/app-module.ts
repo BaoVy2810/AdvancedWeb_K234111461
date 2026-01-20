@@ -1,4 +1,4 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { input, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -33,6 +33,8 @@ import { ServiceProductImageEventDetail } from './exercise13/service-product-ima
 import { ProductComponent } from './exercise19/product-component/product-component';
 import { ListProductComponent } from './exercise19/list-product-component/list-product-component';
 import { ServiceProductComponent } from './exercise19/service-product-component/service-product-component';
+import { Form } from './form/form';
+import { FakeProductComponent } from './fake-product-component/fake-product-component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { ServiceProductComponent } from './exercise19/service-product-component/
     ServiceProductImageEventDetail,
     ProductComponent,
     ListProductComponent,
-    ServiceProductComponent
+    ServiceProductComponent,
+    Form,
+    FakeProductComponent
   ],
   imports: [
     BrowserModule,
