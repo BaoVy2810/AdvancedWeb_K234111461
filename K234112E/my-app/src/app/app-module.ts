@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule, RoutingComponent } from './app-routing-module';
 import { App } from './app';
@@ -35,6 +37,8 @@ import { ListProductComponent } from './exercise19/list-product-component/list-p
 import { ServiceProductComponent } from './exercise19/service-product-component/service-product-component';
 import { Form } from './form/form';
 import { FakeProductComponent } from './fake-product-component/fake-product-component';
+import { ReactiveForms } from './reactive-forms/reactive-forms';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +71,8 @@ import { FakeProductComponent } from './fake-product-component/fake-product-comp
     ListProductComponent,
     ServiceProductComponent,
     Form,
-    FakeProductComponent
+    FakeProductComponent,
+    ReactiveForms
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,10 @@ import { FakeProductComponent } from './fake-product-component/fake-product-comp
     FormsModule,
     AppRoutingModule,
     Mybinding,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
