@@ -1,0 +1,20 @@
+<p>exercise 39 - books works!</p>
+{{errMessage}}
+<table border="1">
+    <tr>
+        <th>BookId</th>
+        <th>BookName</th>
+        <th>Price</th>
+        <th>Image</th>
+    </tr>
+    <tbody>
+        <tr *ngFor= "let book of books">
+            <td>{{book.BookId}}</td>
+            <td>{{book.BookName}}</td>
+            <td>{{book.Price}} </td>
+            <td>
+                <img src="assets/book_images/{{book.Image}}" width="100px" height="100px">
+            </td>
+        </tr>
+    </tbody>
+</table>

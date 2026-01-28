@@ -1,17 +1,12 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs/internal/observable/throwError';
-import { catchError } from 'rxjs/internal/operators/catchError';
-import { retry } from 'rxjs/internal/operators/retry';
 import { IFakeProduct } from '../classes/iFakeProduct';
-import { map } from 'rxjs/internal/operators/map';
-import { Observable } from 'rxjs/internal/Observable';
-
+import { catchError, map, Observable, retry, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class FakeProductService {
-  private _url:string="/exchange"
+  private _url: string = "/exchange/products";
   constructor(private _http: HttpClient) { }
   getFakeProductData():Observable<any> {
     const headers=new HttpHeaders().set("Content-Type","text/plain;charset=utf-8")

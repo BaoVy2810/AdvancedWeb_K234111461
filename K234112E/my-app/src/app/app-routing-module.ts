@@ -17,6 +17,7 @@ import { ListProductComponent } from './exercise19/list-product-component/list-p
 import { Form } from './form/form';
 import { FakeProductComponent } from './fake-product-component/fake-product-component';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
+import { Books } from './books/books';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:"registerform",component:Form},
   {path:"reactiveform",component:ReactiveForms},
   {path:"ex26",component:FakeProductComponent},
+  {path:"ex39",component:Books},
 
 
   {path:"**",component:Pagenotfound}

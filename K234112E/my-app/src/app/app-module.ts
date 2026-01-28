@@ -1,4 +1,4 @@
-import { input, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -38,6 +38,7 @@ import { ServiceProductComponent } from './exercise19/service-product-component/
 import { Form } from './form/form';
 import { FakeProductComponent } from './fake-product-component/fake-product-component';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
+import { Books } from './books/books';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { ReactiveForms } from './reactive-forms/reactive-forms';
     ServiceProductComponent,
     Form,
     FakeProductComponent,
-    ReactiveForms
+    ReactiveForms,
+    Books
   ],
   imports: [
     BrowserModule,
