@@ -22,6 +22,12 @@ let database=[
     {"BookId":"b4","BookName":"Máy học nâng cao","Price":300,"Image":"b4.png"},
     {"BookId":"b5","BookName":"Lập trình Robot cơ bản","Price":250,"Image":"b5.png"},
     ]
-app.get("/books",(req,res)=>{
+app.get("/books",cors(),(req,res)=>{
     res.send(database)
+})
+//exercise 40
+app.get("/books/:id",cors(),(req,res)=>{
+    id=req.params["id"]
+    let p=database.find(x=>x.BookId==id)
+    res.send(p)
 })

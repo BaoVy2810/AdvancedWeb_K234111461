@@ -7,14 +7,14 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './exercise18.html',
   styleUrls: ['./exercise18.css']
 })
-export class Exercise18 implements OnInit {
+export class Exercise18Component implements OnInit {
 
   customersData: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<any[]>('assets/data/customers.json').subscribe({
+    this.http.get<any[]>('/assets/data/customers.json').subscribe({
       next: (data) => {
         this.customersData = data;
       },
@@ -23,4 +23,5 @@ export class Exercise18 implements OnInit {
       }
     });
   }
+
 }

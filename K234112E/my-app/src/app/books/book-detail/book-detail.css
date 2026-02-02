@@ -1,0 +1,108 @@
+p:first-child {
+  font-size: 24px;
+  font-weight: 600;
+  color: #050505;
+  text-align: center;
+  margin: 20px auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+p {
+  color: #e63946;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Search Box */
+.search-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid #ccd0d5;
+  border-radius: 8px;
+  font-size: 15px;
+  width: 250px;
+  margin-right: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #1877f2;
+  box-shadow: 0 0 0 3px rgba(24, 119, 242, 0.2);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #166fe5;
+}
+
+/* Book Detail Table */
+table {
+  max-width: 500px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #e4e6eb;
+  font-size: 15px;
+  color: #050505;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td:first-child {
+  font-weight: 600;
+  color: #65676b;
+  width: 150px;
+}
+
+td:nth-child(2) {
+  color: #050505;
+  font-weight: 500;
+}
+
+/* Image */
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 10px auto;
+}

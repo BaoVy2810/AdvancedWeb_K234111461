@@ -21,7 +21,7 @@ import { Listproduct1 } from './listproduct1/listproduct1';
 import { Listproduct2 } from './listproduct2/listproduct2';
 import { Customer } from './customer/customer';
 import { Listproduct3 } from './listproduct3/listproduct3';
-import { Exercise18 } from './exercise18/exercise18';
+import { Exercise18Component } from './exercise18/exercise18';
 import { Pagenotfound } from './pagenotfound/pagenotfound';
 import { Listcustomer } from './listcustomer/listcustomer';
 import { Customerdetail } from './customerdetail/customerdetail';
@@ -39,6 +39,7 @@ import { Form } from './form/form';
 import { FakeProductComponent } from './fake-product-component/fake-product-component';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { Books } from './books/books';
+import { BookDetail } from './books/book-detail/book-detail';
 
 
 @NgModule({
@@ -57,7 +58,7 @@ import { Books } from './books/books';
     Listproduct2,
     Customer,
     Listproduct3,
-    Exercise18,
+    Exercise18Component,
     Pagenotfound,
     Listcustomer,
     Customerdetail,
@@ -74,7 +75,8 @@ import { Books } from './books/books';
     Form,
     FakeProductComponent,
     ReactiveForms,
-    Books
+    Books,
+    BookDetail
   ],
   imports: [
     BrowserModule,
