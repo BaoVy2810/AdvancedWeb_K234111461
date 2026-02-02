@@ -1,4 +1,11 @@
-p:first-child {
+.book-detail-wrap {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.book-detail-wrap p:first-child {
   font-size: 24px;
   font-weight: 600;
   color: #050505;
@@ -72,6 +79,7 @@ table {
   overflow: hidden;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  table-layout: fixed;
 }
 
 td {
@@ -88,18 +96,21 @@ tr:last-child td {
 td:first-child {
   font-weight: 600;
   color: #65676b;
-  width: 150px;
+  width: 120px;
+  text-align: left;
+  white-space: nowrap;
 }
 
 td:nth-child(2) {
   color: #050505;
   font-weight: 500;
+  text-align: left;
 }
 
 /* Image */
 img {
   width: 100%;
-  max-width: 300px;
+  max-width: 800px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);

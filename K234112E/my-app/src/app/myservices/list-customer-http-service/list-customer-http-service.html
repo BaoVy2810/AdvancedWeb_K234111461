@@ -7,10 +7,11 @@
             <th>Customer Name</th>
             <th>Gender</th>
             <th>Picture</th>
+            <th>#</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let c of customers">
+        <tr *ngFor="let c of (customers || [])">
             <td>{{c.id}}</td>
             <td>{{c.name}}</td>
             <td>{{c.gender}}</td>

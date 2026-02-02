@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/internal/operators/catchError';
   providedIn: 'root',
 })
 export class CustomerHttpService {
-    private _url="assets/data/customer_service.json";
+    private _url="/assets/data/customer_service.json";
 
     constructor(private _http:HttpClient) 
     {

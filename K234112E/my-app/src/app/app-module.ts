@@ -39,7 +39,8 @@ import { Form } from './form/form';
 import { FakeProductComponent } from './fake-product-component/fake-product-component';
 import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { Books } from './books/books';
-import { BookDetail } from './books/book-detail/book-detail';
+import { BookDetail } from './book-detail/book-detail';
+import { FakeProductVersion2 } from './fake-product-component/fake-product-version-2/fake-product-version-2';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { BookDetail } from './books/book-detail/book-detail';
     FakeProductComponent,
     ReactiveForms,
     Books,
-    BookDetail
+    BookDetail,
+    FakeProductVersion2
   ],
   imports: [
     BrowserModule,

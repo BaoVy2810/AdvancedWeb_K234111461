@@ -1,8 +1,9 @@
+<div class="book-detail-wrap">
 <p>book-detail works!</p>
 <p>{{errMessage}}</p>
 Book Id: <input type="text" #bookId> 
-<button (click)= "searchBook(bookId.value)">Search</button>
-<table>
+<button (click)="searchBook(bookId.value)">Search</button>
+<table *ngIf="book">
     <tr>
         <td>Book Id:</td>
         <td>{{book.BookId}}</td>
@@ -21,3 +22,4 @@ Book Id: <input type="text" #bookId>
         </td>
     </tr>
 </table>
+</div>

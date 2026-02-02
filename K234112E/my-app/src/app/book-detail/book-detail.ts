@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BookAPIservice } from '../../myservices/book-apiservice';
+import { BookAPIservice } from '../myservices/book-apiservice';
 
 @Component({
   selector: 'app-book-detail',
