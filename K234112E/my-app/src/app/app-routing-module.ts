@@ -20,6 +20,7 @@ import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { Books } from './books/books';
 import { BookDetail } from './book-detail/book-detail';
 import { FakeProductVersion2 } from './fake-product-component/fake-product-version-2/fake-product-version-2';
+import { BookNewComponent } from './book-new-component/book-new-component';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path:"ex39",component:Books},
   {path:"ex41/:id",component:BookDetail},
   {path:"ex41",component:BookDetail},
+  {path:"ex43",component:BookNewComponent},
 
   {path:"**",component:Pagenotfound}
 ];

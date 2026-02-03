@@ -1,5 +1,6 @@
 <p>exercise 39 - books works!</p>
 {{errMessage}}
+<a routerLink="../ex43">New Book</a>
 <table border="1">
     <tr>
         <th>BookId</th>
@@ -16,6 +17,9 @@
                 <img src="http://localhost:3000/static/images/{{book.Image}}" width="100px" height="100px"
                     (click)="goToBookDetail(book)"
                     style="cursor:pointer;">
+            </td>
+            <td>
+                <a style="cursor:pointer;">Edit</a>
             </td>
         </tr>
     </tbody>

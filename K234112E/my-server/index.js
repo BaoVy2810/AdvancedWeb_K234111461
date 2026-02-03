@@ -14,6 +14,9 @@ app.listen(port,()=>{
 const cors=require("cors")
 app.use(cors())
 
+const bodyParser=require("body-parser")
+app.use(bodyParser.json())
+
 const path=require("path")
 app.use("/static",express.static(path.join(__dirname,"public")))
 
@@ -33,4 +36,14 @@ app.get("/books/:id",cors(),(req,res)=>{
     id=req.params["id"]
     let p=database.find(x=>x.BookId==id)
     res.send(p)
+})
+//exercise 42
+app.post("/books",cors(),(req,res)=>{
+    // console.log(req.body)
+    // res.send("Server received your data, Your data:"+req.body)
+
+    //put json book into database
+    database.push(req.body);
+    //send message to client(send all database to client)
+    res.send(database)
 })

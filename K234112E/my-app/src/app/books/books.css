@@ -1,3 +1,4 @@
+/* Typography */
 p {
   font-size: 20px;
   font-weight: 600;
@@ -7,6 +8,49 @@ p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.error-message {
+  color: #e63946;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Căn giữa link container */
+.link-container {
+  text-align: center;
+  margin: 20px auto;
+  align-items: center;
+}
+
+/* Link New Book */
+a {
+  display: inline-block;
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+  background-color: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+a:active {
+  background-color: #1564d6;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
 table {
   max-width: 1200px;
   margin: 20px auto;
@@ -58,15 +102,15 @@ td:nth-child(3) {
   color: #1877f2;
 }
 
+/* Image Styles */
 img {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.error-message {
-  color: #e63946;
-  text-align: center;
-  margin: 10px auto;
-  font-size: 14px;
-  font-weight: 500;
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }

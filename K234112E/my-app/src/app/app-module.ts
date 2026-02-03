@@ -41,6 +41,7 @@ import { ReactiveForms } from './reactive-forms/reactive-forms';
 import { Books } from './books/books';
 import { BookDetail } from './book-detail/book-detail';
 import { FakeProductVersion2 } from './fake-product-component/fake-product-version-2/fake-product-version-2';
+import { BookNewComponent } from './book-new-component/book-new-component';
 
 
 @NgModule({
@@ -78,7 +79,8 @@ import { FakeProductVersion2 } from './fake-product-component/fake-product-versi
     ReactiveForms,
     Books,
     BookDetail,
-    FakeProductVersion2
+    FakeProductVersion2,
+    BookNewComponent
   ],
   imports: [
     BrowserModule,
