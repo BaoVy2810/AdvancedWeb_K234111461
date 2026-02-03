@@ -1,8 +1,8 @@
 <div class="book-detail-wrap">
 <p>book-detail works!</p>
 <p>{{errMessage}}</p>
-Book Id: <input type="text" #bookId> 
-<button (click)="searchBook(bookId.value)">Search</button>
+Book Id: <input type="text" [(ngModel)]="searchId" (ngModelChange)="onSearchIdChange($event)" placeholder="Nhập Book Id">
+<button (click)="searchBook(searchId)">Search</button>
 <table *ngIf="book">
     <tr>
         <td>Book Id:</td>
@@ -18,7 +18,7 @@ Book Id: <input type="text" #bookId>
     </tr>
     <tr>
         <td colspan="2">
-            <img src="assets/book_images/{{book.Image}}">
+            <img src="http://localhost:3000/static/images/{{book.Image}}">
         </td>
     </tr>
 </table>

@@ -13,7 +13,9 @@
             <td>{{book.BookName}}</td>
             <td>{{book.Price}} </td>
             <td>
-                <img src="assets/book_images/{{book.Image}}" width="100px" height="100px">
+                <img src="http://localhost:3000/static/images/{{book.Image}}" width="100px" height="100px"
+                    (click)="goToBookDetail(book)"
+                    style="cursor:pointer;">
             </td>
         </tr>
     </tbody>

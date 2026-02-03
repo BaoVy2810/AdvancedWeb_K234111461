@@ -14,6 +14,9 @@ app.listen(port,()=>{
 const cors=require("cors")
 app.use(cors())
 
+const path=require("path")
+app.use("/static",express.static(path.join(__dirname,"public")))
+
 let database=[
     {"BookId":"b1","BookName":"Kỹ thuật lập trình cơ bản","Price":70,"Image":"b1.png"},
     {"BookId":"b2",

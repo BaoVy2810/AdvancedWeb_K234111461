@@ -42,6 +42,7 @@ const routes: Routes = [
   {path:"ex26",component:FakeProductComponent},
   {path:"ex27",component:FakeProductVersion2},
   {path:"ex39",component:Books},
+  {path:"ex41/:id",component:BookDetail},
   {path:"ex41",component:BookDetail},
 
   {path:"**",component:Pagenotfound}
