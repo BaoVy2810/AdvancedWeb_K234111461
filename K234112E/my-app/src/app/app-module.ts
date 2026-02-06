@@ -42,6 +42,7 @@ import { Books } from './books/books';
 import { BookDetail } from './book-detail/book-detail';
 import { FakeProductVersion2 } from './fake-product-component/fake-product-version-2/fake-product-version-2';
 import { BookNewComponent } from './book-new-component/book-new-component';
+import { Exercise50 } from './exercise50/exercise50';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { BookNewComponent } from './book-new-component/book-new-component';
     Books,
     BookDetail,
     FakeProductVersion2,
-    BookNewComponent
+    BookNewComponent,
+    Exercise50
   ],
   imports: [
     BrowserModule,

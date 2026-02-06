@@ -45,6 +45,7 @@ const routes: Routes = [
   {path:"ex39",component:Books},
   {path:"ex41/:id",component:BookDetail},
   {path:"ex41",component:BookDetail},
+  {path:"ex43/:id",component:BookNewComponent},
   {path:"ex43",component:BookNewComponent},
 
   {path:"**",component:Pagenotfound}

@@ -33,9 +33,9 @@ app.get("/books",cors(),(req,res)=>{
 })
 //exercise 40
 app.get("/books/:id",cors(),(req,res)=>{
-    id=req.params["id"]
-    let p=database.find(x=>x.BookId==id)
-    res.send(p)
+    const id=req.params["id"]
+    const p=database.find(x=>x.BookId==id)
+    res.send(p || {})
 })
 //exercise 42
 app.post("/books",cors(),(req,res)=>{
@@ -45,5 +45,27 @@ app.post("/books",cors(),(req,res)=>{
     //put json book into database
     database.push(req.body);
     //send message to client(send all database to client)
+    res.send(database)
+})
+
+//exercise 44
+app.put("/books",cors(),(req,res)=>{
+    const book=database.find(x=>x.BookId==req.body.BookId)
+    if(book!=null)
+    {
+        book.BookName=req.body.BookName
+        book.Price=req.body.Price
+        book.Image=req.body.Image
+    }
+    res.send(database)
+})
+
+//exercise 44 - DELETE
+app.delete("/books/:id",cors(),(req,res)=>{
+    const id=req.params["id"]
+    const idx=database.findIndex(x=>x.BookId==id)
+    if(idx>=0){
+        database.splice(idx,1)
+    }
     res.send(database)
 })

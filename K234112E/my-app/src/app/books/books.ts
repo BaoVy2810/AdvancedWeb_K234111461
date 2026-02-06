@@ -26,4 +26,16 @@ export class Books {
       state: { book }
     });
   }
+  putBook(book: any) {
+    if (!book?.BookId) return;
+    this.router.navigate(['/ex43', book.BookId], { state: { book } });
+  }
+  deleteBook(bookId: any) {
+    if (!bookId) return;
+    if (!confirm('Bạn có chắc muốn xóa sách này?')) return;
+    this._service.deleteBook(bookId).subscribe({
+      next: (data) => { this.books = data; this.errMessage = ''; },
+      error: (err) => { this.errMessage = err?.message || String(err); }
+    });
+  }
 }

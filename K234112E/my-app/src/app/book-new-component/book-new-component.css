@@ -36,6 +36,7 @@ table tr {
 table td {
   padding: 15px;
   border-bottom: 1px solid #e4e6eb;
+  text-align: left;
 }
 
 table tr:last-child td {
@@ -120,6 +121,36 @@ table[border="1"] th {
   text-align: center;
   font-weight: 600;
   font-size: 15px;
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+/* Buttons Edit & Delete - giống nút New Book */
+.btn-action {
+  display: inline-block;
+  background-color: #1877f2;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action:hover {
+  background-color: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action:active {
+  background-color: #1564d6;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 table[border="1"] td {
@@ -148,8 +179,8 @@ table[border="1"] td:nth-child(2) {
 }
 
 table[border="1"] td:nth-child(3) {
-  font-weight: 600;
-  color: #1877f2;
+  font-weight: 500;
+  color: #050505;
 }
 
 /* Image Styling */
