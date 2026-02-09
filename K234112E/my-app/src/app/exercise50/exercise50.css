@@ -1,0 +1,190 @@
+*{
+    font-size: 13px;
+}
+h3.page-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #050505;
+  text-align: center;
+  margin-top:80px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.err-msg {
+  color: #e63946;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.create-new-wrap {
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+a.New_book {
+  display: inline-block;
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+a.New_book:hover {
+  background-color: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+a.New_book:active {
+  background-color: #1564d6;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.table-scroll-wrap {
+  overflow-x: auto;
+  margin: 0 auto 24px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-table {
+  min-width: 1000px;
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  border-radius: 12px;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: none;
+}
+
+.book-table th {
+  background-color: #1877f2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+.book-table th.bookname-header {
+  max-width: 180px;
+  width: 180px;
+}
+
+.book-table th.desc-header {
+  min-width: 320px;
+  width: 320px;
+}
+
+.book-table td.bookname-cell {
+  max-width: 180px;
+  word-wrap: break-word;
+}
+
+.book-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e4e6eb;
+  color: #050505;
+}
+
+.book-table td.desc-cell {
+  min-width: 320px;
+  max-width: 380px;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.book-table tbody tr:hover {
+  background-color: #f0f2f5;
+}
+
+.book-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.actions-cell {
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.actions-cell .btn-action {
+  display: block;
+  width: 100%;
+  margin: 6px 0;
+  box-sizing: border-box;
+}
+
+.actions-cell .btn-action:first-child {
+  margin-top: 0;
+}
+
+/* Buttons Edit, Details, Delete - giống nút New Book (books) */
+.btn-action {
+  display: inline-block;
+  background-color: #1877f2;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 2px;
+  transition: background-color 0.2s, transform 0.1s;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.btn-action:hover {
+  background-color: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action:active {
+  background-color: #1564d6;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action.btn-detail {
+  background-color: #36a420;
+}
+
+.btn-action.btn-detail:hover {
+  background-color: #2d8a1a;
+}
+
+.btn-action.btn-detail:active {
+  background-color: #248f15;
+}
+
+.btn-action.btn-danger {
+  background-color: #e63946;
+}
+
+.btn-action.btn-danger:hover {
+  background-color: #d62839;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-action.btn-danger:active {
+  background-color: #c52230;
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

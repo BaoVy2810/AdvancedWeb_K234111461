@@ -1,0 +1,110 @@
+*{
+  font-size: 13px;
+}
+.ex50-bookinfo-wrap {
+  max-width: 1400px;
+  margin: 20px auto;
+  padding: 0 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ex50-bookinfo-wrap h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #050505;
+  margin-top: 80px;
+}
+
+.ex50-bookinfo-wrap h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #050505;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.err-msg {
+  color: #e63946;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+.form-section.detail-section {
+  width: 100%;
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.form-table td {
+  padding: 10px 0;
+  vertical-align: middle;
+}
+
+.form-table td:first-child {
+  font-weight: 600;
+  color: #050505;
+  width: 140px;
+  padding-right: 16px;
+  font-size: 14px;
+}
+
+.form-table.detail-table td {
+  text-align: justify;
+}
+
+.form-table.detail-table td:first-child {
+  text-align: left;
+}
+
+.form-actions {
+  padding-top: 16px !important;
+  text-align: center;
+}
+
+.form-actions .btn-submit {
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-submit {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s, transform 0.1s;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: #166fe5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.detail-img {
+  display: block;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

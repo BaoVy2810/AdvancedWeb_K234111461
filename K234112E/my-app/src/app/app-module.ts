@@ -43,6 +43,8 @@ import { BookDetail } from './book-detail/book-detail';
 import { FakeProductVersion2 } from './fake-product-component/fake-product-version-2/fake-product-version-2';
 import { BookNewComponent } from './book-new-component/book-new-component';
 import { Exercise50 } from './exercise50/exercise50';
+import { Ex50BookinfoNewComponent } from './exercise50/ex50-bookinfo-new-component/ex50-bookinfo-new-component';
+import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-component/ex50-bookinfo-detail-component';
 
 
 @NgModule({
@@ -82,7 +84,9 @@ import { Exercise50 } from './exercise50/exercise50';
     BookDetail,
     FakeProductVersion2,
     BookNewComponent,
-    Exercise50
+    Exercise50,
+    Ex50BookinfoNewComponent,
+    Ex50BookinfoDetailComponent
   ],
   imports: [
     BrowserModule,

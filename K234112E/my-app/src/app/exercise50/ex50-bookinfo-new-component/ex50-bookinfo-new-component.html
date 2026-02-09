@@ -1,0 +1,144 @@
+<div class="ex50-bookinfo-wrap">
+  <h2>Quản lý thông tin sách (Book Information)</h2>
+  <p class="err-msg">{{ errMessage }}</p>
+
+  <!-- Form thêm/sửa sách -->
+  <div class="form-section">
+    <h3>{{ isEditMode ? 'Chỉnh sửa sách' : 'Thêm sách mới' }}</h3>
+    <table class="form-table">
+      <tr>
+        <td>Book Id:</td>
+        <td>
+          <input type="text" class="form-control" name="BookId" id="BookId"
+                 placeholder="Enter Book Id" [(ngModel)]="book.BookId"
+                 [readonly]="isEditMode" />
+        </td>
+      </tr>
+      <tr>
+        <td>Tên sách:</td>
+        <td>
+          <input type="text" class="form-control" name="BookName" id="BookName"
+                 placeholder="Nhập tên sách" [(ngModel)]="book.BookName" />
+        </td>
+      </tr>
+      <tr>
+        <td>Giá bán:</td>
+        <td>
+          <input type="number" class="form-control" name="BookPrice" id="BookPrice"
+                 placeholder="0" [(ngModel)]="book.BookPrice" />
+        </td>
+      </tr>
+      <tr>
+        <td>Mô tả:</td>
+        <td>
+          <input type="text" class="form-control" name="BookDescription" id="BookDescription"
+                 placeholder="Mô tả sách" [(ngModel)]="book.BookDescription" />
+        </td>
+      </tr>
+      <tr>
+        <td>Ảnh bìa:</td>
+        <td>
+          <input type="text" class="form-control" name="BookPicture" id="BookPicture"
+                 placeholder="e.g. b1.png" [(ngModel)]="book.BookPicture" />
+        </td>
+      </tr>
+      <tr>
+        <td>Ngày cập nhật:</td>
+        <td>
+          <input type="text" class="form-control" name="PublishDate" id="PublishDate"
+                 placeholder="dd-mm-yyyy hh:mm:ss AM/PM" [(ngModel)]="book.PublishDate" />
+        </td>
+      </tr>
+      <tr>
+        <td>Số lượng tồn:</td>
+        <td>
+          <input type="number" class="form-control" name="BookQuantity" id="BookQuantity"
+                 placeholder="0" [(ngModel)]="book.BookQuantity" />
+        </td>
+      </tr>
+      <tr>
+        <td>Mã chủ đề:</td>
+        <td>
+          <input type="number" class="form-control" name="BookCategoryID" id="BookCategoryID"
+                 placeholder="0" [(ngModel)]="book.BookCategoryID" />
+        </td>
+      </tr>
+      <tr>
+        <td>Mã NXB:</td>
+        <td>
+          <input type="number" class="form-control" name="BookPublisherID" id="BookPublisherID"
+                 placeholder="0" [(ngModel)]="book.BookPublisherID" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="form-actions">
+          <button type="button" class="btn-submit" (click)="submitBook()">
+            {{ isEditMode ? 'Cập nhật' : 'Thêm sách' }}
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Panel chi tiết (khi bấm Details) -->
+  <div class="detail-panel" *ngIf="selectedBook">
+    <h3>Chi tiết sách</h3>
+    <table class="form-table detail-table">
+      <tr><td>Book Id:</td><td>{{ selectedBook.BookId }}</td></tr>
+      <tr><td>Tên sách:</td><td>{{ selectedBook.BookName }}</td></tr>
+      <tr><td>Giá bán:</td><td>{{ selectedBook.BookPrice }}</td></tr>
+      <tr><td>Mô tả:</td><td>{{ selectedBook.BookDescription || '—' }}</td></tr>
+      <tr><td>Ảnh bìa:</td><td><img *ngIf="selectedBook.BookPicture" [src]="getImageSrc(selectedBook.BookPicture)" class="detail-img" alt="" /></td></tr>
+      <tr><td>Ngày cập nhật:</td><td>{{ selectedBook.PublishDate || '—' }}</td></tr>
+      <tr><td>Số lượng tồn:</td><td>{{ selectedBook.BookQuantity }}</td></tr>
+      <tr><td>Mã CD:</td><td>{{ selectedBook.BookCategoryID }}</td></tr>
+      <tr><td>Mã NXB:</td><td>{{ selectedBook.BookPublisherID }}</td></tr>
+      <tr><td colspan="2"><button type="button" class="btn-cancel" (click)="closeDetail()">Đóng</button></td></tr>
+    </table>
+  </div>
+
+  <!-- Bảng danh sách -->
+  <div class="list-section">
+    <h3>Danh sách sách</h3>
+    <div class="table-scroll-wrap">
+    <table class="list-table" border="1">
+      <thead>
+        <tr>
+          <th>Stt</th>
+          <th class="bookname-header">Tên sách</th>
+          <th>Giá bán</th>
+          <th>Mô tả</th>
+          <th>Ảnh bìa</th>
+          <th>Ngày cập nhật</th>
+          <th>Số lượng tồn</th>
+          <th>MaCD</th>
+          <th>MaNXB</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bookinfo; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td class="bookname-cell">{{ b.BookName }}</td>
+          <td>{{ b.BookPrice }}</td>
+          <td class="desc-cell">{{ b.BookDescription || '—' }}</td>
+          <td>
+            <img *ngIf="b.BookPicture" [src]="getImageSrc(b.BookPicture)" width="60" height="60" alt=""
+                 (click)="viewDetail(b)" class="thumb" />
+            <span *ngIf="!b.BookPicture">—</span>
+          </td>
+          <td>{{ b.PublishDate || '—' }}</td>
+          <td>{{ b.BookQuantity }}</td>
+          <td>{{ b.BookCategoryID }}</td>
+          <td>{{ b.BookPublisherID }}</td>
+          <td class="actions-cell">
+            <a href="#" class="btn-action" (click)="editBook(b); $event.preventDefault()">Edit</a>
+            <a href="#" class="btn-action btn-detail" (click)="viewDetail(b); $event.preventDefault()">Details</a>
+            <a href="#" class="btn-action btn-danger" (click)="deleteBook(b.BookId); $event.preventDefault()">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

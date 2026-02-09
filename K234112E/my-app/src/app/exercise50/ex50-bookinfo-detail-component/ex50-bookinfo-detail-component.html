@@ -1,0 +1,54 @@
+<div class="ex50-bookinfo-wrap">
+  <h2>Quản lý thông tin sách (Book Information)</h2>
+  <p class="err-msg">{{ errMessage }}</p>
+
+  <div class="form-section detail-section" *ngIf="book">
+    <h3>Chi tiết sách</h3>
+    <table class="form-table detail-table">
+      <tr>
+        <td>Book Id:</td>
+        <td>{{ book.BookId }}</td>
+      </tr>
+      <tr>
+        <td>Tên sách:</td>
+        <td>{{ book.BookName }}</td>
+      </tr>
+      <tr>
+        <td>Giá bán:</td>
+        <td>{{ book.BookPrice }}</td>
+      </tr>
+      <tr>
+        <td>Mô tả:</td>
+        <td>{{ book.BookDescription || '—' }}</td>
+      </tr>
+      <tr>
+        <td>Ảnh bìa:</td>
+        <td>
+          <img *ngIf="book.BookPicture" [src]="getImageSrc(book.BookPicture)" class="detail-img" alt="" />
+          <span *ngIf="!book.BookPicture">—</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Ngày cập nhật:</td>
+        <td>{{ book.PublishDate || '—' }}</td>
+      </tr>
+      <tr>
+        <td>Số lượng tồn:</td>
+        <td>{{ book.BookQuantity }}</td>
+      </tr>
+      <tr>
+        <td>Mã chủ đề:</td>
+        <td>{{ book.BookCategoryID }}</td>
+      </tr>
+      <tr>
+        <td>Mã NXB:</td>
+        <td>{{ book.BookPublisherID }}</td>
+      </tr>
+      <tr>
+        <td colspan="2" class="form-actions">
+          <button type="button" class="btn-submit" (click)="goBack()">Quay lại</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,1 +1,39 @@
-<p>exercise50 works!</p>
+<h3 class="page-title">QUẢN LÝ THÔNG TIN SÁCH</h3>
+<p class="err-msg">{{ errMessage }}</p>
+<div class="create-new-wrap">
+  <a class="New_book" routerLink="/ex50/bookinfo">Create New</a>
+</div>
+<div class="table-scroll-wrap">
+<table border="1" class="book-table">
+    <tr>
+        <th>Stt</th>
+        <th class="bookname-header">Tensach</th>
+        <th>Giaban</th>
+        <th class="desc-header">Mota</th>
+        <th>Anhbia</th>
+        <th>Ngaycapnhat</th>
+        <th>Soluongton</th>
+        <th>MaCD</th>
+        <th>MaNXB</th>
+        <th>Thao tác</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let b of bookinfo; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td class="bookname-cell">{{ b.BookName }}</td>
+            <td>{{ b.BookPrice }}</td>
+            <td class="desc-cell">{{ b.BookDescription }}</td>
+            <td>{{ b.BookPicture }}</td>
+            <td>{{ b.PublishDate }}</td>
+            <td>{{ b.BookQuantity }}</td>
+            <td>{{ b.BookCategoryID }}</td>
+            <td>{{ b.BookPublisherID }}</td>
+            <td class="actions-cell">
+                <a href="#" class="btn-action" (click)="editBook(b); $event.preventDefault()">Edit</a>
+                <a href="#" class="btn-action btn-detail" (click)="viewDetail(b); $event.preventDefault()">Details</a>
+                <a href="#" class="btn-action btn-danger" (click)="deleteBook(b.BookId); $event.preventDefault()">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
