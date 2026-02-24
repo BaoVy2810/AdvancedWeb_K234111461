@@ -1,9 +1,8 @@
-<div class="book-detail-wrap">
 <p>book-detail works!</p>
 <p>{{errMessage}}</p>
-Book Id: <input type="text" [(ngModel)]="searchId" (ngModelChange)="onSearchIdChange($event)" placeholder="Nhập Book Id">
-<button (click)="searchBook(searchId)">Search</button>
-<table *ngIf="book">
+Book Id: <input type="text" #bookId> <button
+(click)="searchBook(bookId.value)">Search</button>
+<table>
     <tr>
         <td>Book Id:</td>
         <td>{{book.BookId}}</td>
@@ -22,4 +21,3 @@ Book Id: <input type="text" [(ngModel)]="searchId" (ngModelChange)="onSearchIdCh
         </td>
     </tr>
 </table>
-</div>

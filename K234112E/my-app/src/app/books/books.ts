@@ -11,31 +11,33 @@ import { Router } from '@angular/router';
 export class Books {
   books:any;
   errMessage:string=''
-  constructor(
-    private _service: BookAPIservice,
-    private router: Router
-  ){
+  router: any;
+  constructor(private _service: BookAPIservice){
     this._service.getBooks().subscribe({
       next:(data)=>{this.books=data},
       error:(err)=>{this.errMessage=err}
     })
   }
-  goToBookDetail(book: any): void {
-    if (!book?.BookId) return;
-    this.router.navigate(['/ex41', book.BookId], {
-      state: { book }
-    });
+    show_detail(id:any)
+    {
+      this.router.navigate(["ex41",id])
+    }
+    show_update(id:any)
+    {
+      this.router.navigate(["ex45",id])
+    }
+    request_delete(id:any)
+    {
+      if(confirm("Are you sure want to delete BookId=["+id+"]?"))
+      {
+        this.deleteBook(id)
+      }
+    }
+    deleteBook(bookId:any)
+    {
+      this._service.deleteBook(bookId).subscribe({
+        next:(data)=>{this.books=data},
+        error:(err)=>{this.errMessage=err}
+      })
+    }
   }
-  putBook(book: any) {
-    if (!book?.BookId) return;
-    this.router.navigate(['/ex43', book.BookId], { state: { book } });
-  }
-  deleteBook(bookId: any) {
-    if (!bookId) return;
-    if (!confirm('Bạn có chắc muốn xóa sách này?')) return;
-    this._service.deleteBook(bookId).subscribe({
-      next: (data) => { this.books = data; this.errMessage = ''; },
-      error: (err) => { this.errMessage = err?.message || String(err); }
-    });
-  }
-}

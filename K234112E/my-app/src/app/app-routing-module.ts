@@ -24,6 +24,9 @@ import { BookNewComponent } from './book-new-component/book-new-component';
 import { Exercise50 } from './exercise50/exercise50';
 import { Ex50BookinfoNewComponent } from './exercise50/ex50-bookinfo-new-component/ex50-bookinfo-new-component';
 import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-component/ex50-bookinfo-detail-component';
+import { BookUpdateComponent } from './book-update-component/book-update-component';
+import { BookDeleteComponent } from './book-delete-component/book-delete-component';
+import { Fashion } from './fashion/fashion';
 
 const routes: Routes = [
   {path:"gioithieu",component:About},
@@ -50,11 +53,16 @@ const routes: Routes = [
   {path:"ex41",component:BookDetail},
   {path:"ex43/:id",component:BookNewComponent},
   {path:"ex43",component:BookNewComponent},
+  {path:"ex45",component:BookUpdateComponent},
+  {path:"ex45/:id",component:BookUpdateComponent},
+  {path:"ex47",component:BookDeleteComponent},
   {path:"ex50",component:Exercise50},
   {path:"ex50/bookinfo",component:Ex50BookinfoNewComponent},
   {path:"ex50/bookinfo/:id",component:Ex50BookinfoNewComponent},
   {path:"ex50/detail",component:Ex50BookinfoDetailComponent},
   {path:"ex50/detail/:id",component:Ex50BookinfoDetailComponent},
+  {path:"ex53",component:Fashion},
+
 
   {path:"**",component:Pagenotfound}
 ];

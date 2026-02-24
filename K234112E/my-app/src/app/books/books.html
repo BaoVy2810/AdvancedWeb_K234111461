@@ -16,14 +16,14 @@
             <td>{{book.Price}} </td>
             <td>
                 <img src="http://localhost:3000/static/images/{{book.Image}}" width="100px" height="100px"
-                    (click)="goToBookDetail(book)"
+                    (click)="show_detail(book.BookId)"
                     style="cursor:pointer;">
             </td>
-            <td colspan="2">
-                <button class="btn-action" (click)="putBook(book)">Edit</button>
+            <td>
+                <a style="cursor:pointer" (click)="show_update(book.BookId)"></a>
             </td>
-            <td colspan="2">
-                <button class="btn-action" (click)="deleteBook(book.BookId)">Delete</button>
+            <td>
+                <a style="cursor:pointer" (click)="request_delele(book.BookId)">Delete</a>
             </td>
         </tr>
     </tbody>

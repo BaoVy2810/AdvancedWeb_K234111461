@@ -45,6 +45,9 @@ import { BookNewComponent } from './book-new-component/book-new-component';
 import { Exercise50 } from './exercise50/exercise50';
 import { Ex50BookinfoNewComponent } from './exercise50/ex50-bookinfo-new-component/ex50-bookinfo-new-component';
 import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-component/ex50-bookinfo-detail-component';
+import { BookUpdateComponent } from './book-update-component/book-update-component';
+import { BookDeleteComponent } from './book-delete-component/book-delete-component';
+import { Fashion } from './fashion/fashion';
 
 
 @NgModule({
@@ -86,7 +89,10 @@ import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-c
     BookNewComponent,
     Exercise50,
     Ex50BookinfoNewComponent,
-    Ex50BookinfoDetailComponent
+    Ex50BookinfoDetailComponent,
+    BookUpdateComponent,
+    BookDeleteComponent,
+    Fashion
   ],
   imports: [
     BrowserModule,

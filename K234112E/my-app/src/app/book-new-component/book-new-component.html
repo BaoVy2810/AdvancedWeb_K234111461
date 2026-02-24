@@ -7,11 +7,11 @@
       <input
         type="text"
         class="form-control"
+        #name="ngModel"
         name="BookId"
         id="BookId"
         placeholder="Enter Book Id"
         [(ngModel)]="book.BookId"
-        [readonly]="isEditMode"
       />
     </td>
   </tr>
@@ -21,6 +21,7 @@
       <input
         type="text"
         class="form-control"
+        #name="ngModel"
         name="BookName"
         id="BookName"
         placeholder="Enter Book Name"
@@ -34,6 +35,7 @@
       <input
         type="text"
         class="form-control"
+        #name="ngModel"
         name="BookPrice"
         id="BookPrice"
         placeholder="Enter Price"
@@ -42,32 +44,17 @@
     </td>
   </tr>
   <tr>
-    <td>Image:</td>
-    <td>
-      <input
-        type="text"
-        class="form-control"
-        name="Image"
-        id="Image"
-        placeholder="Enter Image (e.g. b1.png)"
-        [(ngModel)]="book.Image"
-      />
-    </td>
-  </tr>
-  <tr>
     <td colspan="2">
-      <button (click)="submitBook()">{{ isEditMode ? 'Edit' : 'Submit' }}</button>
+      <button (click)="postBook()">Submit</button>
     </td>
   </tr>
 </table>
 <table border="1">
   <tr>
-    <th>BookId</th>
-    <th>BookName</th>
-    <th>Price</th>
-    <th>Image</th>
-    <th>Edit</th>
-    <th>Delete</th>
+    <td>BookId</td>
+    <td>BookName</td>
+    <td>Price</td>
+    <td>Image</td>
   </tr>
   <tbody>
     <tr *ngFor="let book of books">
@@ -75,11 +62,18 @@
       <td>{{ book.BookName }}</td>
       <td>{{ book.Price }}</td>
       <td>
-        <img src="http://localhost:3000/static/images/{{book.Image}}" width="100px" height="100px"
-             (click)="goToBookDetail(book)" style="cursor:pointer;" />
+        <img
+          src="http://localhost:3000/static/images/{{ book.Image }}"
+          width="100px"
+          height="100px"
+        />
       </td>
-      <td><button class="btn-action" (click)="editBook(book)">Edit</button></td>
-      <td><button class="btn-action" (click)="deleteBook(book.BookId)">Delete</button></td>
     </tr>
+    <tr>
+    <td colspan="2">
+      <button type="button" (click)="postBook()">Submit</button>
+      <button type="button" (click)="back()">Back</button>
+    </td>
+  </tr>
   </tbody>
 </table>
