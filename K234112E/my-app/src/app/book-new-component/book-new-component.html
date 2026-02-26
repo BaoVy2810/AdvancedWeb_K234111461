@@ -1,5 +1,5 @@
 <p>book-new works!</p>
-<p>{{ errMessage }}</p>
+<p class="error-message">{{ errMessage }}</p>
 <table>
   <tr>
     <td>Book Id:</td>
@@ -43,18 +43,18 @@
       />
     </td>
   </tr>
-  <tr>
+  <tr class="button-row">
     <td colspan="2">
       <button (click)="postBook()">Submit</button>
     </td>
   </tr>
 </table>
-<table border="1">
+<table>
   <tr>
-    <td>BookId</td>
-    <td>BookName</td>
-    <td>Price</td>
-    <td>Image</td>
+    <th>BookId</th>
+    <th>BookName</th>
+    <th>Price</th>
+    <th>Image</th>
   </tr>
   <tbody>
     <tr *ngFor="let book of books">
@@ -69,11 +69,10 @@
         />
       </td>
     </tr>
-    <tr>
-    <td colspan="2">
-      <button type="button" (click)="postBook()">Submit</button>
-      <button type="button" (click)="back()">Back</button>
-    </td>
-  </tr>
+    <tr class="button-row">
+      <td colspan="4">
+        <button type="button" (click)="back()">Back</button>
+      </td>
+    </tr>
   </tbody>
 </table>

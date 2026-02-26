@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Book } from '../classes/ibook';
 import { BookAPIservice } from '../myservices/book-apiservice';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,18 +15,21 @@ export class BookUpdateComponent {
   errMessage: string = '';
   constructor(
     private _service: BookAPIservice,
-    private router:Router,
-    private _route: ActivatedRoute
+    private router: Router,
+    private _route: ActivatedRoute,
+    private cdr: ChangeDetectorRef
   ) {
     this._service.getBooks().subscribe({
       next: (data) => {
         this.books = data;
+        this.cdr.detectChanges();
       },
       error: (err) => {
-        this.errMessage = err;
+        this.errMessage = err.message;
+        this.cdr.detectChanges();
       }
     })
-    activeRouter.paramMap.subscribe((params)=>{
+    this._route.paramMap.subscribe((params)=>{
       let bookId=params.get("id")
       if (bookId!=null)
         this.searchBook(bookId)
@@ -36,20 +39,25 @@ export class BookUpdateComponent {
     this._service.putBook(this.book).subscribe({
       next: (data) => {
         this.books = data;
+        this.cdr.detectChanges();
       },
       error: (err) => {
-        this.errMessage = err;
+        this.errMessage = err.message;
+        this.cdr.detectChanges();
       },
     });
   }
-  searchBook(bookId:String)
+  searchBook(bookId:string)
   {
-    this._service.getBooks(bookId).subscribe({
+    this._service.getBook(bookId).subscribe({
       next: (data) => {
-        this.books = data;
+        this.book = data;
+        this.cdr.detectChanges();
       },
       error: (err) => {
-        this.errMessage = err;
-    },
-  })
+        this.errMessage = err.message;
+        this.cdr.detectChanges();
+      },
+    })
+  }
 }

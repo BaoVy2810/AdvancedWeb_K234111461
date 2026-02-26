@@ -1,13 +1,16 @@
-<p>book-delete works!</p>
-<p>{{ errMessage }}</p>
-Book Id: <input type="text" #bookId />
-<button (click)="deleteBook(bookId.value)">Delete Book</button>
-<table border="1">
+<div class="page-center">
+  <p>book-delete works!</p>
+  <p class="error-message">{{ errMessage }}</p>
+  <div class="search-container">
+    <span class="form-label">Book Id:</span> <input type="text" #bookId />
+    <button (click)="deleteBook(bookId.value)">Delete Book</button>
+  </div>
+  <table>
   <tr>
-    <td>BookId</td>
-    <td>BookName</td>
-    <td>Price</td>
-    <td>Image</td>
+    <th>BookId</th>
+    <th>BookName</th>
+    <th>Price</th>
+    <th>Image</th>
   </tr>
   <tbody>
     <tr *ngFor="let book of books">
@@ -15,8 +18,9 @@ Book Id: <input type="text" #bookId />
       <td>{{ book.BookName }}</td>
       <td>{{ book.Price }}</td>
       <td>
-        <img src="assets/book_images/{{ book.Image }}" width="50px" height="50px" />
+        <img src="assets/book_images/{{ book.Image }}" width="100px" height="100px"/>
       </td>
     </tr>
   </tbody>
-</table>
+  </table>
+</div>

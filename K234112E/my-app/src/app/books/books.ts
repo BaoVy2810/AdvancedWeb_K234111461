@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { BookAPIservice } from '../myservices/book-apiservice';
 import { Router } from '@angular/router';
 
@@ -11,11 +11,16 @@ import { Router } from '@angular/router';
 export class Books {
   books:any;
   errMessage:string=''
-  router: any;
-  constructor(private _service: BookAPIservice){
+  constructor(private _service: BookAPIservice, private router: Router, private cdr: ChangeDetectorRef){
     this._service.getBooks().subscribe({
-      next:(data)=>{this.books=data},
-      error:(err)=>{this.errMessage=err}
+      next:(data)=>{
+        this.books=data;
+        this.cdr.detectChanges();
+      },
+      error:(err)=>{
+        this.errMessage=err.message;
+        this.cdr.detectChanges();
+      }
     })
   }
     show_detail(id:any)
@@ -36,8 +41,14 @@ export class Books {
     deleteBook(bookId:any)
     {
       this._service.deleteBook(bookId).subscribe({
-        next:(data)=>{this.books=data},
-        error:(err)=>{this.errMessage=err}
+        next:(data)=>{
+          this.books=data;
+          this.cdr.detectChanges();
+        },
+        error:(err)=>{
+          this.errMessage=err.message;
+          this.cdr.detectChanges();
+        }
       })
     }
   }

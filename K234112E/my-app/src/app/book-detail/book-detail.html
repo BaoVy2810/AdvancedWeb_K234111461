@@ -1,8 +1,11 @@
-<p>book-detail works!</p>
-<p>{{errMessage}}</p>
-Book Id: <input type="text" #bookId> <button
-(click)="searchBook(bookId.value)">Search</button>
-<table>
+<div class="page-center">
+  <p>book-detail works!</p>
+  <p class="error-message">{{errMessage}}</p>
+  <div class="search-container">
+    <span class="form-label">Book Id:</span> <input type="text" #bookId>
+    <button (click)="searchBook(bookId.value)">Search</button>
+  </div>
+  <table *ngIf="book">
     <tr>
         <td>Book Id:</td>
         <td>{{book.BookId}}</td>
@@ -17,7 +20,8 @@ Book Id: <input type="text" #bookId> <button
     </tr>
     <tr>
         <td colspan="2">
-            <img src="http://localhost:3000/static/images/{{book.Image}}">
+            <img src="http://localhost:3000/static/images/{{book.Image}}"/>
         </td>
     </tr>
-</table>
+  </table>
+</div>

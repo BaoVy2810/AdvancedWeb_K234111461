@@ -27,7 +27,7 @@ p {
 a {
   display: inline-block;
   background-color: #1877f2;
-  color: white;
+  color: white !important;
   padding: 10px 20px;
   font-size: 15px;
   font-weight: 600;
