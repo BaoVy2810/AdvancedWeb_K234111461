@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,900&family=Raleway:wght@300;400;600&display=swap');
+
+/* ─── Reset & Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Tăng độ sâu cho nền bằng cách thêm lớp bụi giấy (grain) */
+  background-color: #5c0a0a;
+  background-image: 
+    linear-gradient(rgba(92, 10, 10, 0.8), rgba(60, 0, 0, 0.9)),
+    url('https://www.transparenttextures.com/patterns/stardust.png'); 
+  color: #f4f1ea;
+  font-family: 'Raleway', sans-serif;
+  min-height: 100vh;
+  padding: 80px 20px;
+  overflow-x: hidden;
+}
+p {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(80px, 10vw, 120px); /* Chữ cực lớn nhưng co giãn theo màn hình */
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  color: #8b0000;
+  margin-top: 90px;
+  margin-bottom: 25px;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  line-height: 0.8;
+  position: relative;
+  z-index: 99;
+}
+
+/* Thêm chữ nghệ thuật nằm đè hoặc lót phía dưới */
+p::before {
+  content: 'Andalusia';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  letter-spacing: 15px;
+  font-weight: 600;
+  font-style: normal;
+  color: #8b0000; 
+  margin-bottom: 10px;
+}
+
+p::after {
+  content: '[ passion and soul ]';
+  display: block;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: lowercase;
+  letter-spacing: 8px;
+  color: #8b0000;
+  margin-top: 50px;
+}
+
+/* ─── Table Container ─── */
+table {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 15px; /* Tạo khoảng cách giữa các hàng như các block nội dung */
+  background: transparent;
+  margin-top: 10px;
+}
+
+/* ─── Table Header ─── */
+thead tr td, th {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+/* ─── Body Rows (Biến mỗi hàng thành một "Card" giấy sáng màu) ─── */
+tbody tr {
+  background-color: #f4f1ea; /* Màu giấy kem trong ảnh */
+  color: #1a1a1a;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+tbody tr:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+  box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset style cho các ô trong thân bảng */
+tbody td {
+  padding: 30px 20px;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+/* Cột 1: Số thứ tự kiểu [1] trong ảnh */
+tbody td:nth-child(1) {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #8b0000;
+  font-weight: 700;
+  width: 80px;
+}
+tbody td:nth-child(1)::before { content: "["; }
+tbody td:nth-child(1)::after { content: "]"; }
+
+/* Cột 2: Fashion Subject (Tiêu đề mục) */
+tbody td:nth-child(2) {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  width: 25%;
+}
+
+/* Cột 3: Fashion Detail (Nội dung mô tả) */
+tbody td:nth-child(3) {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  color: #444;
+  text-align: justify;
+}
+
+/* Cột 4: Hình ảnh */
+tbody td:nth-child(4) {
+  width: 150px;
+  text-align: right;
+}
+
+/* ─── Image Style (Nghệ thuật & Cổ điển) ─── */
+img {
+  width: 120px;
+  height: 160px; /* Tỉ lệ dọc kiểu tạp chí */
+  object-fit: cover;
+  border-radius: 0; /* Ảnh vuông vức */
+  filter: sepia(30%) contrast(1.1); /* Hiệu ứng ảnh cũ */
+  border: 4px solid #fff;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  transition: 0.5s;
+}
+
+img:hover {
+  filter: sepia(0%) contrast(1.2);
+  transform: rotate(3deg);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #3c0000; }
+::-webkit-scrollbar-thumb { background: #f4f1ea; }

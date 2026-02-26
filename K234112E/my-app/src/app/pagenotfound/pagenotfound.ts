@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './pagenotfound.css',
 })
 export class Pagenotfound {
-
+  currentYear = new Date().getFullYear();
 }
