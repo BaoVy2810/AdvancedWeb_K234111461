@@ -1,0 +1,27 @@
+<div class="page-center">
+    <p>fashion-detail-component works!</p>
+  <p class="error-message">{{errMessage}}</p>
+  <div class="search-container">
+    <span class="form-label">Fashion Id:</span> <input type="text" #fashionId>
+    <button (click)="searchFashion(fashionId.value)">Search</button>
+  </div>
+  <table *ngIf="fashion">
+    <tr>
+        <td>Fashion Id:</td>
+        <td>{{fashion._id}}</td>
+    </tr>
+    <tr>
+        <td>Fashion Subject:</td>
+        <td>{{fashion.fashion_subject}}</td>
+    </tr>
+    <tr>
+        <td>Fashion Detail:</td>
+        <td>{{fashion.fashion_detail}} </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <img src="{{get_image(fashion.fashion_image)}}"/>
+        </td>
+    </tr>
+  </table>
+</div>

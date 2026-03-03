@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { Home } from './home/home';
 import { About } from './about/about';
 import { Listproduct1 } from './listproduct1/listproduct1';
 import { Listproduct2 } from './listproduct2/listproduct2';
@@ -27,44 +28,51 @@ import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-c
 import { BookUpdateComponent } from './book-update-component/book-update-component';
 import { BookDeleteComponent } from './book-delete-component/book-delete-component';
 import { Fashion } from './fashion/fashion';
+import { FashionDetailComponent } from './fashion-detail-component/fashion-detail-component';
+import { Login } from './login/login';
+import { Register } from './register/register';
 
 const routes: Routes = [
-  {path:"gioithieu",component:About},
-  {path:"sanpham1",component:Listproduct1},
-  {path:"sanpham2",component:Listproduct2},
-  {path:"sanpham3",component:Listproduct3},
-  {path:"list-customer",component:Listcustomer},
-  {path:"list-customer/:id",component:Customerdetail},
-  {path:"list-customer-service",component:Listcustomerservicer},
-  {path:"list-customer-service/:id",component:Customerdetail},
-  {path:"list-customer-http-service",component:ListCustomerHttpService},
-  {path:"list-customer-http-service/:id",component:Customerdetail},
-  {path:'service-product-image-event',component:ServiceProductImageEvent},
-  {path:'service-product-image-event/:id',component:ServiceProductImageEventDetail},
-  {path:'product',component:ProductComponent},
-  {path:'list-product',component:ListProductComponent},
-  {path:'service-product',component:ServiceProductComponent},
-  {path:"registerform",component:Form},
-  {path:"reactiveform",component:ReactiveForms},
-  {path:"ex26",component:FakeProductComponent},
-  {path:"ex27",component:FakeProductVersion2},
-  {path:"ex39",component:Books},
-  {path:"ex41/:id",component:BookDetail},
-  {path:"ex41",component:BookDetail},
-  {path:"ex43/:id",component:BookNewComponent},
-  {path:"ex43",component:BookNewComponent},
-  {path:"ex45",component:BookUpdateComponent},
-  {path:"ex45/:id",component:BookUpdateComponent},
-  {path:"ex47",component:BookDeleteComponent},
-  {path:"ex50",component:Exercise50},
-  {path:"ex50/bookinfo",component:Ex50BookinfoNewComponent},
-  {path:"ex50/bookinfo/:id",component:Ex50BookinfoNewComponent},
-  {path:"ex50/detail",component:Ex50BookinfoDetailComponent},
-  {path:"ex50/detail/:id",component:Ex50BookinfoDetailComponent},
-  {path:"ex53",component:Fashion},
-
-
-  {path:"**",component:Pagenotfound}
+  { path: "login", component: Login },
+  { path: "register", component: Register },
+  { path: "", redirectTo: "/login", pathMatch: "full" },
+  { path: "home", component: Home },
+  { path: "gioithieu", component: About },
+  { path: "sanpham1", component: Listproduct1 },
+  { path: "sanpham2", component: Listproduct2 },
+  { path: "sanpham3", component: Listproduct3 },
+  { path: "list-customer", component: Listcustomer },
+  { path: "list-customer/:id", component: Customerdetail },
+  { path: "list-customer-service", component: Listcustomerservicer },
+  { path: "list-customer-service/:id", component: Customerdetail },
+  { path: "list-customer-http-service", component: ListCustomerHttpService },
+  { path: "list-customer-http-service/:id", component: Customerdetail },
+  { path: "service-product-image-event", component: ServiceProductImageEvent },
+  { path: "service-product-image-event/:id", component: ServiceProductImageEventDetail },
+  { path: "product", component: ProductComponent },
+  { path: "list-product", component: ListProductComponent },
+  { path: "service-product", component: ServiceProductComponent },
+  { path: "registerform", component: Form },
+  { path: "reactiveform", component: ReactiveForms },
+  { path: "ex26", component: FakeProductComponent },
+  { path: "ex27", component: FakeProductVersion2 },
+  { path: "ex39", component: Books },
+  { path: "ex41/:id", component: BookDetail },
+  { path: "ex41", component: BookDetail },
+  { path: "ex43/:id", component: BookNewComponent },
+  { path: "ex43", component: BookNewComponent },
+  { path: "ex45", component: BookUpdateComponent },
+  { path: "ex45/:id", component: BookUpdateComponent },
+  { path: "ex47", component: BookDeleteComponent },
+  { path: "ex50", component: Exercise50 },
+  { path: "ex50/bookinfo", component: Ex50BookinfoNewComponent },
+  { path: "ex50/bookinfo/:id", component: Ex50BookinfoNewComponent },
+  { path: "ex50/detail", component: Ex50BookinfoDetailComponent },
+  { path: "ex50/detail/:id", component: Ex50BookinfoDetailComponent },
+  { path: "ex53", component: Fashion },
+  { path: "ex54", component: FashionDetailComponent },
+  { path: "ex54/:id", component: FashionDetailComponent },
+  { path: "**", component: Pagenotfound }
 ];
 
 @NgModule({

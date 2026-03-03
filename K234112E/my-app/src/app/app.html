@@ -1,9 +1,10 @@
-<h1>
-  Welcome K234112E to Angular!!!
-</h1>
-<div id="container">  
-  <ul>
-    <li> <a href="#">HOME</a></li>
+<ng-container *ngIf="authService.isLoggedIn | async; else authBlock">
+  <h1>
+    Welcome K234112E to Angular!!!
+  </h1>
+  <div id="container">  
+    <ul>
+      <li> <a routerLink="/home">HOME</a></li>
     <li> <a href="#">PRODUCTS</a>
       <ul>
           <li> <a routerLink="/sanpham1">Product 1</a></li>
@@ -44,11 +45,17 @@
     <li> <a href="#">MongoDB - REST API</a>
       <ul>
           <li><a routerLink="/ex53">EXERCISE 53</a></li>
+          <li><a routerLink="/ex54">EXERCISE 54</a></li>
       </ul>
     </li>
     <li> <a routerLink="/gioithieu">ABOUT</a></li>
-  </ul>
-</div>
+      <li> <a (click)="logout()">LOG OUT</a></li>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #authBlock>
+  <!-- Chỉ hiển thị login/register khi chưa đăng nhập -->
+</ng-template>
 <!-- <table>
   <tr>
     <td>

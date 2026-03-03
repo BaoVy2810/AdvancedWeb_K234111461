@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule, RoutingComponent } from './app-routing-module';
 import { App } from './app';
+import { Home } from './home/home';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
 import { Exercise3 } from './exercise3/exercise3';
@@ -48,12 +49,16 @@ import { Ex50BookinfoDetailComponent } from './exercise50/ex50-bookinfo-detail-c
 import { BookUpdateComponent } from './book-update-component/book-update-component';
 import { BookDeleteComponent } from './book-delete-component/book-delete-component';
 import { Fashion } from './fashion/fashion';
+import { FashionDetailComponent } from './fashion-detail-component/fashion-detail-component';
+import { Login } from './login/login';
+import { Register } from './register/register';
 
 
 @NgModule({
   declarations: [
     App,
     RoutingComponent,
+    Home,
     About,
     Contact,
     Exercise3,
@@ -92,7 +97,10 @@ import { Fashion } from './fashion/fashion';
     Ex50BookinfoDetailComponent,
     BookUpdateComponent,
     BookDeleteComponent,
-    Fashion
+    Fashion,
+    FashionDetailComponent,
+    Login,
+    Register
   ],
   imports: [
     BrowserModule,

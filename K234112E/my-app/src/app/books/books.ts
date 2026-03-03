@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { BookAPIservice } from '../myservices/book-apiservice';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class Books {
   books:any;
   errMessage:string=''
-  constructor(private _service: BookAPIservice, private router: Router, private cdr: ChangeDetectorRef){
+  constructor(private _service: BookAPIservice, private router: Router,private ActivateRouter: ActivatedRoute,private cdr: ChangeDetectorRef){
     this._service.getBooks().subscribe({
       next:(data)=>{
         this.books=data;

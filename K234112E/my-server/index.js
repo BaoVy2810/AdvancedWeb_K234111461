@@ -106,4 +106,3 @@ app.delete("/bookinfo/:id",cors(),(req,res)=>{
     res.send(BookInfo)
 })
 
-
