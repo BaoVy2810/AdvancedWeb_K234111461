@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Phil Oh's Best Street Style Photos from the Fall 2023 Shows in Paris",
+    "details": "<p>Two street style camps in Paris: scarves and layers versus bold prints. <strong>Phil Oh</strong> captures the best looks.</p><p><img src=\"https://via.placeholder.com/600x400\" alt=\"Street style\" /></p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "STREET STYLE",
+    "creationDate": { "$date": "2024-01-15T10:00:00.000Z" }
+  },
+  {
+    "title": "Phil Oh's Best Street Style Photos from the Fall 2023 Shows in Milan",
+    "details": "<p>Milan street style highlights from the Fall 2023 shows.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "STREET STYLE",
+    "creationDate": { "$date": "2024-01-14T10:00:00.000Z" }
+  },
+  {
+    "title": "Vivienne Westwood Is Remembered in London",
+    "details": "<p>Tribute to Vivienne Westwood in London fashion week.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "STREET STYLE",
+    "creationDate": { "$date": "2024-01-13T10:00:00.000Z" }
+  },
+  {
+    "title": "Why the Short Suit Should Be Your Next Spring Investment",
+    "details": "<p>Short suits are trending for spring. Here's why you should consider one.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "TRENDS",
+    "creationDate": { "$date": "2024-01-12T10:00:00.000Z" }
+  },
+  {
+    "title": "Is This the Trend Report of the Future? An AI Interprets the Fall 2023 Menswear Season",
+    "details": "<p>AI interprets the Fall 2023 menswear trends.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "TRENDS",
+    "creationDate": { "$date": "2024-01-11T10:00:00.000Z" }
+  },
+  {
+    "title": "Men, Skirts Aren't That Scary—Promise",
+    "details": "<p>Men's skirts are having a moment. A quick guide to wearing them.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "TRENDS",
+    "creationDate": { "$date": "2024-01-10T10:00:00.000Z" }
+  },
+  {
+    "title": "Minimalist Capsule Wardrobe Essentials",
+    "details": "<p>Build a capsule wardrobe with these minimalist essentials.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "MINIMAL",
+    "creationDate": { "$date": "2024-01-09T10:00:00.000Z" }
+  },
+  {
+    "title": "Neutral Tones for Every Season",
+    "details": "<p>How to wear neutrals year-round.</p>",
+    "thumbnail": "https://via.placeholder.com/200",
+    "style": "MINIMAL",
+    "creationDate": { "$date": "2024-01-08T10:00:00.000Z" }
+  }
+]

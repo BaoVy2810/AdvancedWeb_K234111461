@@ -50,6 +50,89 @@ app.get("/fashions/:id", async (req, res) => {
   res.send(result[0]);
 });
 
+// ---------- Exercise 58: Fashion CRUD (title, details, thumbnail, style, creationDate) ----------
+// GET all fashions, sorted by creation date desc; optional ?style=XXX to filter
+app.get("/api/fashion", async (req, res) => {
+  try {
+    const style = req.query.style;
+    const filter = style ? { style: String(style) } : {};
+    const result = await fashionCollection
+      .find(filter)
+      .sort({ creationDate: -1 })
+      .toArray();
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+// GET fashion by id
+app.get("/api/fashion/:id", async (req, res) => {
+  try {
+    const o_id = new ObjectId(req.params.id);
+    const doc = await fashionCollection.findOne({ _id: o_id });
+    if (!doc) return res.status(404).json({ error: "Not found" });
+    res.json(doc);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+// POST add fashion
+app.post("/api/fashion", async (req, res) => {
+  try {
+    const { title, details, thumbnail, style } = req.body;
+    const doc = {
+      title: title || "",
+      details: details || "",
+      thumbnail: thumbnail || "",
+      style: style || "",
+      creationDate: new Date(),
+    };
+    const result = await fashionCollection.insertOne(doc);
+    res.status(201).json({ ...doc, _id: result.insertedId });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+// PUT edit fashion
+app.put("/api/fashion/:id", async (req, res) => {
+  try {
+    const o_id = new ObjectId(req.params.id);
+    const { title, details, thumbnail, style } = req.body;
+    const update = {
+      ...(title !== undefined && { title }),
+      ...(details !== undefined && { details }),
+      ...(thumbnail !== undefined && { thumbnail }),
+      ...(style !== undefined && { style }),
+    };
+    const result = await fashionCollection.findOneAndUpdate(
+      { _id: o_id },
+      { $set: update },
+      { returnDocument: "after" }
+    );
+    if (!result) return res.status(404).json({ error: "Not found" });
+    const doc = result && typeof result.value !== "undefined" ? result.value : result;
+    res.json(doc);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+// DELETE fashion by id
+app.delete("/api/fashion/:id", async (req, res) => {
+  try {
+    const o_id = new ObjectId(req.params.id);
+    const result = await fashionCollection.deleteOne({ _id: o_id });
+    if (result.deletedCount === 0) return res.status(404).json({ error: "Not found" });
+    res.json({ deleted: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
 

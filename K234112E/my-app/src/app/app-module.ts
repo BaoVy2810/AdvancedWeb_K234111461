@@ -55,7 +55,9 @@ import { Register } from './register/register';
 import { Exercise63 } from './exercise63/exercise63';
 import { Cart } from './exercise63/cart/cart';
 import { Exercise58 } from './exercise58/exercise58';
-
+import { Ex58Form } from './exercise58/ex58-form/ex58-form';
+import { Ex58Detail } from './exercise58/ex58-detail/ex58-detail';
+import { Ex58Client } from './exercise58/ex58-client/ex58-client';
 
 @NgModule({
   declarations: [
@@ -106,7 +108,10 @@ import { Exercise58 } from './exercise58/exercise58';
     Register,
     Exercise63,
     Cart,
-    Exercise58
+    Exercise58,
+    Ex58Form,
+    Ex58Detail,
+    Ex58Client
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+<div class="ex58-form-page">
+  <h1 class="page-title">{{ isEdit ? 'Edit Fashion' : 'Add new Fashion' }}</h1>
+
+  <div *ngIf="loading && !model._id" class="loading-wrap">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+
+  <div *ngIf="error" class="error-msg">{{ error }}</div>
+
+  <form *ngIf="!loading || model._id" (ngSubmit)="save()" class="form">
+    <div class="field">
+      <label for="title">Fashion title <span class="req">*</span></label>
+      <input id="title" type="text" [(ngModel)]="model.title" name="title" required />
+    </div>
+    <div class="field">
+      <label for="details">Fashion details (HTML / WYSIWYG)</label>
+      <textarea
+        id="details"
+        [(ngModel)]="model.details"
+        name="details"
+        rows="8"
+        class="details-editor"
+      ></textarea>
+      <small
+        >You can use HTML tags. For full WYSIWYG, add a rich-text editor library (e.g.
+        ngx-editor).</small
+      >
+    </div>
+    <div class="field">
+      <label for="thumbnail">Thumbnail (URL or path)</label>
+      <input id="thumbnail" type="text" [(ngModel)]="model.thumbnail" name="thumbnail" />
+    </div>
+    <div class="field">
+      <label for="style">Fashion's Style</label>
+      <input id="style" type="text" [(ngModel)]="model.style" name="style" />
+    </div>
+    <div class="actions">
+      <button type="submit" class="btn-save" [disabled]="loading">Save</button>
+      <button type="button" class="btn-cancel" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
