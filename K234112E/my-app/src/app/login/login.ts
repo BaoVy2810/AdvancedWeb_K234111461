@@ -24,6 +24,11 @@ export class Login {
     this.authService.isLoggedIn.pipe(take(1)).subscribe((loggedIn) => {
       if (loggedIn) this.router.navigate(['/home']);
     });
+    // Exercise 61: read cookie and fill username/password in input boxes
+    this.authService.getLoginCookie().subscribe((data) => {
+      if (data.username) this.username = data.username;
+      if (data.password) this.password = data.password;
+    });
   }
 
   onSubmit() {

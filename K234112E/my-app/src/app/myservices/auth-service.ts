@@ -25,14 +25,38 @@ export class AuthService {
     return this.loggedIn.asObservable();
   }
 
+  private options = { withCredentials: true };
+
+  // Exercise 61: get saved login (username/password) from cookie for input boxes
+  getLoginCookie(): Observable<{ username: string; password: string }> {
+    return this.http
+      .get<{ username: string; password: string }>(
+        `${this.apiUrl}/read-login-cookie`,
+        this.options
+      )
+      .pipe(
+        catchError(() => of({ username: '', password: '' }))
+      );
+  }
+
   // Đăng ký
   register(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, { username, password });
+    return this.http.post(
+      `${this.apiUrl}/register`,
+      { username, password },
+      this.options
+    );
   }
 
   // Đăng nhập
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<{ success: boolean }>(`${this.apiUrl}/login`, { username, password }).pipe(
+    return this.http
+      .post<{ success: boolean }>(
+        `${this.apiUrl}/login`,
+        { username, password },
+        this.options
+      )
+      .pipe(
       map((response) => {
         if (response.success) {
           localStorage.setItem('authToken', 'loggedin');
@@ -46,8 +70,11 @@ export class AuthService {
     );
   }
 
-  // Đăng xuất
+  // Đăng xuất (clear login cookie - Exercise 61)
   logout() {
+    this.http
+      .get(`${this.apiUrl}/clear-login-cookie`, this.options)
+      .subscribe(() => {});
     localStorage.removeItem('authToken');
     this.loggedIn.next(false);
     this.router.navigate(['/login']);
