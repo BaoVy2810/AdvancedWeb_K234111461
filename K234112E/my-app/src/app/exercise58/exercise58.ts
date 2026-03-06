@@ -13,6 +13,8 @@ export class Exercise58 {
   list: Ex58Fashion[] = [];
   loading = true;
   error = '';
+  itemToDelete: Ex58Fashion | null = null;
+  errorModalMessage: string | null = null;
 
   constructor(
     private service: Ex58FashionService,
@@ -26,16 +28,22 @@ export class Exercise58 {
   loadList(): void {
     this.loading = true;
     this.error = '';
+    this.errorModalMessage = null;
     this.service.getAll().subscribe({
       next: (data) => {
         this.list = data || [];
         this.loading = false;
       },
       error: (err) => {
-        this.error = err?.message || 'Cannot load fashion list.';
+        this.errorModalMessage = err?.message || 'Cannot load fashion list.';
         this.loading = false;
       },
     });
+  }
+
+  dismissErrorModal(): void {
+    this.errorModalMessage = null;
+    this.error = '';
   }
 
   viewDetail(id: string): void {
@@ -52,11 +60,21 @@ export class Exercise58 {
 
   deleteItem(item: Ex58Fashion): void {
     if (!item._id) return;
-    if (!confirm(`Delete "${item.title}"?`)) return;
-    this.service.delete(item._id).subscribe({
+    this.itemToDelete = item;
+  }
+
+  cancelDelete(): void {
+    this.itemToDelete = null;
+  }
+
+  confirmDelete(): void {
+    if (!this.itemToDelete?._id) return;
+    const id = this.itemToDelete._id;
+    this.itemToDelete = null;
+    this.service.delete(id).subscribe({
       next: () => this.loadList(),
       error: (err) => {
-        this.error = err?.message || 'Delete failed.';
+        this.errorModalMessage = err?.message || 'Delete failed.';
       },
     });
   }

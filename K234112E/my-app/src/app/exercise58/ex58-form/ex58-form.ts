@@ -14,6 +14,7 @@ export class Ex58Form {
   isEdit = false;
   loading = false;
   error = '';
+  errorModalMessage: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -37,16 +38,22 @@ export class Ex58Form {
         this.loading = false;
       },
       error: (err) => {
-        this.error = err?.message || 'Cannot load fashion.';
+        this.errorModalMessage = err?.message || 'Cannot load fashion.';
         this.loading = false;
       },
     });
   }
 
+  dismissErrorModal(): void {
+    this.errorModalMessage = null;
+    this.error = '';
+  }
+
   save(): void {
     this.error = '';
+    this.errorModalMessage = null;
     if (!this.model.title?.trim()) {
-      this.error = 'Title is required.';
+      this.errorModalMessage = 'Title is required.';
       return;
     }
     this.loading = true;
@@ -60,7 +67,7 @@ export class Ex58Form {
       this.service.update(this.model._id, body).subscribe({
         next: () => this.router.navigate(['/ex58']),
         error: (err) => {
-          this.error = err?.message || 'Update failed.';
+          this.errorModalMessage = err?.message || 'Update failed.';
           this.loading = false;
         },
       });
@@ -68,7 +75,7 @@ export class Ex58Form {
       this.service.add(body).subscribe({
         next: () => this.router.navigate(['/ex58']),
         error: (err) => {
-          this.error = err?.message || 'Add failed.';
+          this.errorModalMessage = err?.message || 'Add failed.';
           this.loading = false;
         },
       });

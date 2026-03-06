@@ -292,6 +292,94 @@ body,
   }
 }
 
+/* ─── Error modal (same style as exercise58) ─── */
+.ex58-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+  animation: ex58ModalFadeIn 0.25s ease both;
+}
+
+.ex58-modal {
+  background: #f4f1ea;
+  color: #1a1a1a;
+  max-width: 420px;
+  width: 100%;
+  padding: 28px 32px;
+  box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(139, 0, 0, 0.2);
+  animation: fadeUp 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+}
+
+.ex58-modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #8b0000;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.ex58-modal-text {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  color: rgba(26, 26, 26, 0.85);
+  margin-bottom: 24px;
+}
+
+.ex58-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.ex58-modal-btn {
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.ex58-modal-btn-ok {
+  background: #8b0000;
+  color: #f4f1ea;
+  border-color: #8b0000;
+}
+
+.ex58-modal-btn-ok:hover {
+  background: #5c0a0a;
+  border-color: #5c0a0a;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.ex58-modal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes ex58ModalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 600px) {
   body,

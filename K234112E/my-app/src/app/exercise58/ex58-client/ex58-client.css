@@ -80,7 +80,7 @@ body,
   flex: 1;
   background: #f4f1ea;
   border: none;
-  color: #1a1a1a;
+  color: #8b0000;
   font-family: 'Playfair Display', serif;
   font-size: 15px;
   font-style: italic;
@@ -144,7 +144,7 @@ body,
   font-weight: 600;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.4);
+  color: #8b0000;
 }
 
 /* ─── Error ─── */
@@ -189,7 +189,7 @@ body,
   font-style: normal;
   letter-spacing: 8px;
   text-transform: uppercase;
-  color: rgba(244, 241, 234, 0.5);
+  color: #8b0000;
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(244, 241, 234, 0.12);
@@ -199,7 +199,7 @@ body,
 .style-title::before {
   content: '—';
   margin-right: 12px;
-  color: rgba(244, 241, 234, 0.25);
+  color: #8b0000;
 }
 
 /* ─── Card Grid ─── */
@@ -231,7 +231,7 @@ body,
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  background: #e2ddd4;
+  background: #e2ddd4ad;
   position: relative;
 }
 
@@ -261,8 +261,8 @@ body,
   font-weight: 600;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: rgba(26, 26, 26, 0.22);
-  background: linear-gradient(135deg, #e2ddd4 0%, #cec9bf 100%);
+  color: #8b0000;
+  background: linear-gradient(135deg, #e2ddd4ad 0%, #cec9bfad 100%);
 }
 
 /* ─── Card Title ─── */

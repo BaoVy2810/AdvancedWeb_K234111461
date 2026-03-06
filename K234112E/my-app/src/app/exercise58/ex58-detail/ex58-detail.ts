@@ -14,6 +14,7 @@ export class Ex58Detail {
   item: Ex58Fashion | null = null;
   loading = true;
   error = '';
+  errorModalMessage: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,7 +35,7 @@ export class Ex58Detail {
         this.loading = false;
       },
       error: (err) => {
-        this.error = err?.message || 'Cannot load fashion.';
+        this.errorModalMessage = err?.message || 'Cannot load fashion.';
         this.loading = false;
       },
     });
@@ -48,6 +49,11 @@ export class Ex58Detail {
   back(): void {
     const fromClient = this.router.url.includes('ex58-client');
     this.router.navigate([fromClient ? '/ex58-client' : '/ex58']);
+  }
+
+  dismissErrorModal(): void {
+    this.errorModalMessage = null;
+    this.error = '';
   }
 
   edit(): void {

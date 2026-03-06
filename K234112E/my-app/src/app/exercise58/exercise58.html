@@ -1,56 +1,79 @@
-<div class="ex58-admin">
-  <h1 class="page-title">Exercise 58 - Fashion Admin</h1>
-  <p class="page-sub">Manage fashion items (list, add, edit, delete)</p>
+<div class="ex58-root">
+  <div class="ex58-admin">
+    <h1 class="page-title">Exercise 58 - Fashion Admin</h1>
+    <p class="page-sub">Manage fashion items (list, add, edit, delete)</p>
 
-  <div *ngIf="loading" class="loading-wrap">
-    <div class="spinner"></div>
-    <p>Loading...</p>
+    <div *ngIf="loading" class="loading-wrap">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+    <div *ngIf="!loading && !error" class="toolbar">
+      <button type="button" class="btn-add" (click)="addNew()">Add a new Fashion</button>
+    </div>
+
+    <div *ngIf="!loading && list.length > 0" class="table-wrap">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Title</th>
+            <th>Style</th>
+            <th>Creation date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list">
+            <td>
+              <img
+                *ngIf="item.thumbnail"
+                [src]="getThumbnailUrl(item.thumbnail)"
+                alt=""
+                class="thumb-img"
+                onerror="this.style.display = 'none'"
+              />
+              <span *ngIf="!item.thumbnail" class="no-thumb">—</span>
+            </td>
+            <td>{{ item.title || '—' }}</td>
+            <td>{{ item.style || '—' }}</td>
+            <td>{{ item.creationDate | date: 'short' }}</td>
+            <td class="actions">
+              <button type="button" class="btn-view" (click)="viewDetail(item._id!)">
+                View detail
+              </button>
+              <button type="button" class="btn-edit" (click)="edit(item._id!)">Edit</button>
+              <button type="button" class="btn-del" (click)="deleteItem(item)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="!loading && list.length === 0" class="empty">
+      <p>No fashion items. Click "Add a new Fashion" to create one.</p>
+    </div>
   </div>
-  <div *ngIf="error" class="error-msg">{{ error }}</div>
 
-  <div *ngIf="!loading && !error" class="toolbar">
-    <button type="button" class="btn-add" (click)="addNew()">Add a new Fashion</button>
+  <!-- Delete confirmation modal -->
+  <div *ngIf="itemToDelete" class="ex58-modal-backdrop" (click)="cancelDelete()">
+    <div class="ex58-modal" (click)="$event.stopPropagation()">
+      <h3 class="ex58-modal-title">Delete fashion?</h3>
+      <p class="ex58-modal-text">"{{ itemToDelete.title || 'Untitled' }}" will be removed. This cannot be undone.</p>
+      <div class="ex58-modal-actions">
+        <button type="button" class="ex58-modal-btn ex58-modal-btn-cancel" (click)="cancelDelete()">Cancel</button>
+        <button type="button" class="ex58-modal-btn ex58-modal-btn-delete" (click)="confirmDelete()">Delete</button>
+      </div>
+    </div>
   </div>
 
-  <div *ngIf="!loading && !error && list.length > 0" class="table-wrap">
-    <table class="tbl">
-      <thead>
-        <tr>
-          <th>Thumbnail</th>
-          <th>Title</th>
-          <th>Style</th>
-          <th>Creation date</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of list">
-          <td>
-            <img
-              *ngIf="item.thumbnail"
-              [src]="getThumbnailUrl(item.thumbnail)"
-              alt=""
-              class="thumb-img"
-              onerror="this.style.display = 'none'"
-            />
-            <span *ngIf="!item.thumbnail" class="no-thumb">—</span>
-          </td>
-          <td>{{ item.title || '—' }}</td>
-          <td>{{ item.style || '—' }}</td>
-          <td>{{ item.creationDate | date: 'short' }}</td>
-          <td class="actions">
-            <button type="button" class="btn-view" (click)="viewDetail(item._id!)">
-              View detail
-            </button>
-            <button type="button" class="btn-edit" (click)="edit(item._id!)">Edit</button>
-            <button type="button" class="btn-del" (click)="deleteItem(item)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div *ngIf="!loading && !error && list.length === 0" class="empty">
-    <p>No fashion items. Click "Add a new Fashion" to create one.</p>
+  <!-- Error modal -->
+  <div *ngIf="errorModalMessage" class="ex58-modal-backdrop" (click)="dismissErrorModal()">
+    <div class="ex58-modal" (click)="$event.stopPropagation()">
+      <h3 class="ex58-modal-title">Error</h3>
+      <p class="ex58-modal-text">{{ errorModalMessage }}</p>
+      <div class="ex58-modal-actions">
+        <button type="button" class="ex58-modal-btn ex58-modal-btn-ok" (click)="dismissErrorModal()">OK</button>
+      </div>
+    </div>
   </div>
 </div>
