@@ -52,6 +52,9 @@ import { Fashion } from './fashion/fashion';
 import { FashionDetailComponent } from './fashion-detail-component/fashion-detail-component';
 import { Login } from './login/login';
 import { Register } from './register/register';
+import { Exercise63 } from './exercise63/exercise63';
+import { Cart } from './exercise63/cart/cart';
+import { Exercise58 } from './exercise58/exercise58';
 
 
 @NgModule({
@@ -100,7 +103,10 @@ import { Register } from './register/register';
     Fashion,
     FashionDetailComponent,
     Login,
-    Register
+    Register,
+    Exercise63,
+    Cart,
+    Exercise58
   ],
   imports: [
     BrowserModule,

@@ -39,6 +39,11 @@
                 "output": "/assets"
               },
               {
+                "glob": "products-seed.json",
+                "input": "src/app/exercise63",
+                "output": "/assets/ex63"
+              },
+              {
                 "glob": "**/*",
                 "input": "src/app/learndirective/images",
                 "output": "/app/learndirective/images"

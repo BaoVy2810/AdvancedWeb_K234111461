@@ -31,6 +31,8 @@ import { Fashion } from './fashion/fashion';
 import { FashionDetailComponent } from './fashion-detail-component/fashion-detail-component';
 import { Login } from './login/login';
 import { Register } from './register/register';
+import { Exercise63 } from './exercise63/exercise63';
+import { Cart } from './exercise63/cart/cart';
 
 const routes: Routes = [
   { path: "login", component: Login },
@@ -72,6 +74,9 @@ const routes: Routes = [
   { path: "ex53", component: Fashion },
   { path: "ex54", component: FashionDetailComponent },
   { path: "ex54/:id", component: FashionDetailComponent },
+  { path: "ex63", component: Exercise63 },
+  { path: "cart", component: Cart },
+
   { path: "**", component: Pagenotfound }
 ];
 

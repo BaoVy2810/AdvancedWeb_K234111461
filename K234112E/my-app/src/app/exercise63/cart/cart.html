@@ -1,0 +1,118 @@
+<div class="cart-page">
+  <h1 class="page-title">Shopping Cart</h1>
+
+  <div *ngIf="loading" class="loading-wrap">
+    <div class="spinner"></div>
+    <p>Loading cart...</p>
+  </div>
+
+  <div *ngIf="!loading && cartError" class="error-msg">{{ cartError }}</div>
+
+  <div *ngIf="!loading && !cartError && cartItems.length === 0 && !showCheckoutModal" class="cart-empty">
+    <div class="empty-icon">🛒</div>
+    <h2>Your cart is empty</h2>
+    <p>Add some beautiful rings to get started</p>
+    <button class="btn-continue" (click)="continueShopping()">← Continue Shopping</button>
+  </div>
+
+  <ng-container *ngIf="!loading && !cartError && cartItems.length > 0">
+    <div class="cart-table-wrap">
+      <table class="cart-tbl">
+        <thead>
+          <tr>
+            <th>Remove</th>
+            <th>SKU</th>
+            <th>Image</th>
+            <th>Product(s)</th>
+            <th>Price</th>
+            <th class="center-col">Qty</th>
+            <th class="right-col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let item of cartItems; let i = index"
+            [class.checked-row]="item.checked"
+          >
+            <td>
+              <input
+                type="checkbox"
+                [(ngModel)]="item.checked"
+              />
+            </td>
+            <td class="sku-cell">{{ i + 1 }}</td>
+            <td>
+              <img class="cart-img" [src]="getImageUrl(item.image)" [alt]="item.name" (error)="onImageError($event)" />
+            </td>
+            <td>
+              <span class="prod-name">{{ item.name }}</span>
+            </td>
+            <td class="price-cell">${{ item.price.toFixed(2) }}</td>
+            <td class="center-col">
+              <input
+                class="qty-input"
+                type="number"
+                min="1"
+                max="99"
+                [(ngModel)]="item.quantity"
+              />
+            </td>
+            <td class="right-col total-cell">
+              ${{ (item.price * item.quantity).toFixed(2) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cart-actions">
+      <div class="actions-left">
+        <button class="btn-update" (click)="updateCart()">
+          🔄 Update shopping cart
+        </button>
+        <button class="btn-continue" (click)="continueShopping()">
+          ← Continue shopping
+        </button>
+      </div>
+    </div>
+
+    <div class="success-msg" *ngIf="successMsg">
+      {{ successMsg }}
+    </div>
+
+    <div class="summary-panel">
+      <h2 class="summary-title">Order Summary</h2>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>${{ grandTotal.toFixed(2) }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span class="free-shipping">Free</span>
+      </div>
+      <div class="summary-row grand-total">
+        <span>Grand Total</span>
+        <span>${{ grandTotal.toFixed(2) }}</span>
+      </div>
+
+      <button class="btn-checkout" (click)="checkout()">
+        💳 PROCEED TO CHECKOUT
+      </button>
+    </div>
+  </ng-container>
+</div>
+
+<div class="modal-overlay" [class.open]="showCheckoutModal">
+  <div class="modal-box">
+    <div class="modal-icon">✅</div>
+    <h2 class="modal-title">Order Confirmed!</h2>
+    <p class="modal-msg">
+      Your order has been saved to the database.<br />
+      Session cart has been cleared.
+    </p>
+    <button class="btn-modal-close" (click)="closeModal()">
+      Continue Shopping
+    </button>
+  </div>
+</div>
