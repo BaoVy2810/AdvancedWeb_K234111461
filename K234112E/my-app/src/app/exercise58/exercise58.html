@@ -1,79 +1,22 @@
 <div class="ex58-root">
-  <div class="ex58-admin">
-    <h1 class="page-title">Exercise 58 - Fashion Admin</h1>
-    <p class="page-sub">Manage fashion items (list, add, edit, delete)</p>
-
-    <div *ngIf="loading" class="loading-wrap">
-      <div class="spinner"></div>
-      <p>Loading...</p>
+  <section class="ex58-readme">
+    <h2 class="ex58-readme-title">Exercise 58 — Fashion</h2>
+    <p class="ex58-readme-desc">
+      Ứng dụng Fashion gồm <strong>server API</strong>, <strong>admin</strong> (quản lý) và <strong>client</strong> (xem danh sách/chi tiết).
+      Chạy lần lượt server → admin hoặc client. Dùng các link dưới đây để mở từng app (mở trong tab mới).
+    </p>
+    <div class="ex58-readme-links">
+      <a href="http://localhost:4000" target="_blank" rel="noopener noreferrer" class="ex58-readme-link ex58-link-server">
+        Server (API) — port 4000
+      </a>
+      <a href="http://localhost:4001" target="_blank" rel="noopener noreferrer" class="ex58-readme-link ex58-link-admin">
+        Admin Fashion — port 4001
+      </a>
+      <a href="http://localhost:4002" target="_blank" rel="noopener noreferrer" class="ex58-readme-link ex58-link-client">
+        Client Fashion — port 4002
+      </a>
     </div>
-    <div *ngIf="!loading && !error" class="toolbar">
-      <button type="button" class="btn-add" (click)="addNew()">Add a new Fashion</button>
-    </div>
-
-    <div *ngIf="!loading && list.length > 0" class="table-wrap">
-      <table class="tbl">
-        <thead>
-          <tr>
-            <th>Thumbnail</th>
-            <th>Title</th>
-            <th>Style</th>
-            <th>Creation date</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of list">
-            <td>
-              <img
-                *ngIf="item.thumbnail"
-                [src]="getThumbnailUrl(item.thumbnail)"
-                alt=""
-                class="thumb-img"
-                onerror="this.style.display = 'none'"
-              />
-              <span *ngIf="!item.thumbnail" class="no-thumb">—</span>
-            </td>
-            <td>{{ item.title || '—' }}</td>
-            <td>{{ item.style || '—' }}</td>
-            <td>{{ item.creationDate | date: 'short' }}</td>
-            <td class="actions">
-              <button type="button" class="btn-view" (click)="viewDetail(item._id!)">
-                View detail
-              </button>
-              <button type="button" class="btn-edit" (click)="edit(item._id!)">Edit</button>
-              <button type="button" class="btn-del" (click)="deleteItem(item)">Delete</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div *ngIf="!loading && list.length === 0" class="empty">
-      <p>No fashion items. Click "Add a new Fashion" to create one.</p>
-    </div>
-  </div>
-
-  <!-- Delete confirmation modal -->
-  <div *ngIf="itemToDelete" class="ex58-modal-backdrop" (click)="cancelDelete()">
-    <div class="ex58-modal" (click)="$event.stopPropagation()">
-      <h3 class="ex58-modal-title">Delete fashion?</h3>
-      <p class="ex58-modal-text">"{{ itemToDelete.title || 'Untitled' }}" will be removed. This cannot be undone.</p>
-      <div class="ex58-modal-actions">
-        <button type="button" class="ex58-modal-btn ex58-modal-btn-cancel" (click)="cancelDelete()">Cancel</button>
-        <button type="button" class="ex58-modal-btn ex58-modal-btn-delete" (click)="confirmDelete()">Delete</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Error modal -->
-  <div *ngIf="errorModalMessage" class="ex58-modal-backdrop" (click)="dismissErrorModal()">
-    <div class="ex58-modal" (click)="$event.stopPropagation()">
-      <h3 class="ex58-modal-title">Error</h3>
-      <p class="ex58-modal-text">{{ errorModalMessage }}</p>
-      <div class="ex58-modal-actions">
-        <button type="button" class="ex58-modal-btn ex58-modal-btn-ok" (click)="dismissErrorModal()">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
+    <p class="ex58-readme-note">
+      <strong>Lưu ý:</strong> Đảm bảo đã chạy <code>server-fashion</code> (port 4000) trước khi dùng Admin hoặc Client.
+    </p>
+  </section>

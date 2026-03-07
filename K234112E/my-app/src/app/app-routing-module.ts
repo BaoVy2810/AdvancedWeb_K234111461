@@ -34,9 +34,6 @@ import { Register } from './register/register';
 import { Exercise63 } from './exercise63/exercise63';
 import { Cart } from './exercise63/cart/cart';
 import { Exercise58 } from './exercise58/exercise58';
-import { Ex58Form } from './exercise58/ex58-form/ex58-form';
-import { Ex58Detail } from './exercise58/ex58-detail/ex58-detail';
-import { Ex58Client } from './exercise58/ex58-client/ex58-client';
 
 const routes: Routes = [
   { path: "login", component: Login },
@@ -81,11 +78,6 @@ const routes: Routes = [
   { path: "ex63", component: Exercise63 },
   { path: "cart", component: Cart },
   { path: "ex58", component: Exercise58 },
-  { path: "ex58/new", component: Ex58Form },
-  { path: "ex58/edit/:id", component: Ex58Form },
-  { path: "ex58/detail/:id", component: Ex58Detail },
-  { path: "ex58-client", component: Ex58Client },
-  { path: "ex58-client/detail/:id", component: Ex58Detail },
 
   { path: "**", component: Pagenotfound }
 ];
