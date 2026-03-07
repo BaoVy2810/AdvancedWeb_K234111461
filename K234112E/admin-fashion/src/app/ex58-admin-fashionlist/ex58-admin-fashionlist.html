@@ -22,8 +22,21 @@
       <td>
         <button (click)="viewDetail(f._id!)">Xem</button>
         <button (click)="editFashion(f._id!)">Sửa</button>
-        <button (click)="deleteFashion(f._id!)">Xóa</button>
+        <button (click)="openDeleteModal(f)">Xóa</button>
       </td>
     </tr>
   </tbody>
 </table>
+
+<!-- Modal xác nhận xóa -->
+<div class="modal-backdrop" *ngIf="showDeleteModal" (click)="closeDeleteModal()"></div>
+<div class="modal" *ngIf="showDeleteModal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <h3 class="modal-title">Xác nhận xóa</h3>
+    <p class="modal-message">Bạn có chắc muốn xóa fashion này?</p>
+    <div class="modal-actions">
+      <button type="button" class="modal-btn modal-btn-cancel" (click)="closeDeleteModal()">Hủy</button>
+      <button type="button" class="modal-btn modal-btn-confirm" (click)="confirmDelete()">Xóa</button>
+    </div>
+  </div>
+</div>

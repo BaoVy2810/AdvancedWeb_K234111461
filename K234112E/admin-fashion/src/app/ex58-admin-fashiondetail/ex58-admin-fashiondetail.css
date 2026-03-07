@@ -238,7 +238,7 @@ body,
   font-weight: 900;
   font-style: italic;
   text-align: center;
-  color: #8b0000;
+  color: #f4f1ea;
   margin-bottom: 25px;
   letter-spacing: -0.05em;
   text-transform: uppercase;
@@ -257,7 +257,7 @@ body,
   letter-spacing: 15px;
   font-weight: 600;
   font-style: normal;
-  color: #8b0000;
+  color: #f4f1ea;
   white-space: nowrap;
 }
 
@@ -270,7 +270,7 @@ body,
   font-style: normal;
   text-transform: lowercase;
   letter-spacing: 8px;
-  color: #8b0000;
+  color: #f4f1ea;
   margin-top: 32px;
 }
 

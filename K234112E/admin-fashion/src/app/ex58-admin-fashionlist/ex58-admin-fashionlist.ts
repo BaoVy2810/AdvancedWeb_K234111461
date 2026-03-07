@@ -14,6 +14,8 @@ import { AdminFashionService, Fashion } from '../admin-fashion-service/admin-fas
 export class Ex58AdminFashionlist implements OnInit {
   fashions: Fashion[] = [];
   errorMessage = '';
+  showDeleteModal = false;
+  fashionToDelete: Fashion | null = null;
 
   constructor(
     private fashionService: AdminFashionService,
@@ -50,16 +52,32 @@ export class Ex58AdminFashionlist implements OnInit {
     this.router.navigate(['/fashion/new']);
   }
 
-  deleteFashion(id: string): void {
-    if (confirm('Bạn có chắc muốn xóa fashion này?')) {
-      this.fashionService.deleteFashion(id).subscribe({
-        next: () => this.loadFashions(),
-        error: (err) => {
-          this.errorMessage = err.message;
-          this.cdr.markForCheck();
-        }
-      });
-    }
+  openDeleteModal(f: Fashion): void {
+    this.fashionToDelete = f;
+    this.showDeleteModal = true;
+    this.cdr.markForCheck();
+  }
+
+  closeDeleteModal(): void {
+    this.showDeleteModal = false;
+    this.fashionToDelete = null;
+    this.cdr.markForCheck();
+  }
+
+  confirmDelete(): void {
+    if (!this.fashionToDelete?._id) return;
+    const id = this.fashionToDelete._id;
+    this.fashionService.deleteFashion(id).subscribe({
+      next: () => {
+        this.closeDeleteModal();
+        this.loadFashions();
+      },
+      error: (err) => {
+        this.errorMessage = err.message;
+        this.closeDeleteModal();
+        this.cdr.markForCheck();
+      }
+    });
   }
 
   getThumbnailSrc(base64: string): string {
