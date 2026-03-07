@@ -1,0 +1,42 @@
+<div class="fashion-container">
+    <h2>Khám phá Phong cách mới nhất</h2>
+
+    <div class="filter-bar">
+        <label for="styleInput">Tìm theo Style:</label>
+        <input type="text" id="styleInput" [(ngModel)]="selectedStyle" (input)="filterFashions()"
+            placeholder="Nhập tên Style...">
+
+        <label for="styleFilter">Hoặc chọn:</label>
+        <select id="styleFilter" [(ngModel)]="selectedStyle" (change)="filterFashions()">
+            <option value="">Tất cả</option>
+            <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+        </select>
+    </div>
+
+    <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Style</th>
+                <th>Tiêu đề</th>
+                <th>Ảnh</th>
+                <th>Chi tiết</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of filteredFashions">
+                <td>{{f.style}}</td>
+                <td>{{f.fashion_title}}</td>
+                <td><img [src]="getThumbnailSrc(f)" width="120" (click)="viewDetail(f._id!)"
+                        class="thumbnail-img" alt="Avatar"></td>
+                <td>
+                    <button class="btn-view" (click)="viewDetail(f._id!)">Xem Chi Tiết</button>
+                </td>
+            </tr>
+            <tr *ngIf="filteredFashions.length === 0">
+                <td colspan="4">Không tìm thấy style "{{ selectedStyle }}" nào!</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

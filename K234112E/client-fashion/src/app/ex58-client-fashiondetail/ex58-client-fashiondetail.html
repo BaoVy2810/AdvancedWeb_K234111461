@@ -1,0 +1,26 @@
+<div class="detail-container">
+    <button class="btn-back" (click)="goBack()">&#8592; Quay lại danh sách</button>
+
+    <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
+
+    <div *ngIf="fashion" class="card">
+        <div class="card-header">
+            <span class="style-badge">{{ fashion.style }}</span>
+            <h2>{{ fashion.fashion_title }}</h2>
+        </div>
+
+        <div class="card-body">
+            <div class="image-section">
+                <img [src]="getThumbnailSrc(fashion)" alt="Avatar">
+            </div>
+            <div class="content-section">
+                <!-- Render WYSIWYG HTML content safely -->
+                <div class="wysiwyg-content" [innerHTML]="fashion.fashion_details"></div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!fashion && !errorMessage" class="loading">
+        Đang tải chi tiết Fashion...
+    </div>
+</div>

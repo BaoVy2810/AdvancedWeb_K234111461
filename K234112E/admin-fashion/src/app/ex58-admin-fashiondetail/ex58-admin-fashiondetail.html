@@ -1,0 +1,51 @@
+<div *ngIf="isViewMode && fashion" class="detail-container">
+  <button class="btn-back" (click)="cancel()">&#8592; Quay lại danh sách</button>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="style-badge">{{ fashion.style }}</span>
+      <h2 class="card-title">{{ fashion.fashion_title }}</h2>
+    </div>
+    <div class="card-body">
+      <div class="image-section">
+        <img [src]="getThumbnailSrc()" alt="" />
+      </div>
+      <div class="content-section">
+        <div class="wysiwyg-content" [innerHTML]="fashion.fashion_details"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isEditMode" class="ex58-edit-wrap">
+  <h2>{{ fashion ? 'Edit Fashion' : 'Add Fashion' }}</h2>
+  <form [formGroup]="fashionForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Style:</label><br />
+      <input type="text" formControlName="style" size="50" />
+    </div>
+    <div>
+      <label>Tiêu đề:</label><br />
+      <input type="text" formControlName="fashion_title" size="50" />
+    </div>
+    <div>
+      <label>Chi tiết (HTML):</label><br />
+      <angular-editor formControlName="fashion_details" [config]="editorConfig"></angular-editor>
+    </div>
+    <div>
+      <label>Ảnh thumbnail:</label><br />
+      <input type="file" (change)="onFileChange($event)" accept="image/*" />
+      <br />
+      <img
+        *ngIf="getThumbnailSrc()"
+        [src]="getThumbnailSrc()"
+        width="100"
+        style="margin-top: 10px"
+      />
+    </div>
+    <hr />
+    <button type="submit" [disabled]="fashionForm.invalid">Lưu</button>
+    <button type="button" (click)="cancel()">Hủy</button>
+  </form>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>
